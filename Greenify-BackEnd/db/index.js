@@ -10,16 +10,14 @@ db.once('open', function () {
 
 let userSchema = mongoose.Schema({
   // TODO: your schema here!
-  username :String , 
-	password :String
+  username :String, 
+  password :String,
+  phonenumber:Number
 });
 
 let User = mongoose.model('User', userSchema);
 
 let save = (data,callback) => {
-  // TODO: Your code here
-  // This function should save a repo or repos to
-  // the MongoDB	
 
  var user = new User(data)
 
