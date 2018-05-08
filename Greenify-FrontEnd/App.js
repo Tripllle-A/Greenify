@@ -14,22 +14,11 @@ export default class App extends React.Component {
 
   login = () => {
 
-    fetch('http://10.0.2.2:3000/users',{
-      method:"POST",
-      headers: {
-        'Accept':'application/json',
-        'Content-Type':'application/json',
-      },
-  
-    })
-    .then((response) => response.json())
-    .then((res) => {
-      console.log("hello");
-    })
-    .done();
-  }
+    fetch("http://192.168.1.76:3000/users").then(res => {
+       alert(res);  
+   });
 }
-
+}
 const styles = StyleSheet.create({
   container: {
     flex: 1,

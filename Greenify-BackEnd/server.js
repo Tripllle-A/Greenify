@@ -14,7 +14,7 @@ app.use(bodyParser.json())
 
 app.use(morgan('combined'));
 // Handle / route
-app.post('/users', function (req, res) {
+app.get('/users', function (req, res) {
 
   res.json([
       {id:1,username:"Ammar"},

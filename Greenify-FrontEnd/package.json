@@ -15,8 +15,6 @@
     "ios": "react-native-scripts ios",
     "test": "jest"
   },
-
-  "proxy":"http://10.0.2.2:3000",
   "jest": {
     "preset": "jest-expo"
   },
