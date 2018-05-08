@@ -18,9 +18,6 @@ let userSchema = mongoose.Schema({
 let User = mongoose.model('User', userSchema);
 
 let save = (data,callback) => {
-  // TODO: Your code here
-  // This function should save a repo or repos to
-  // the MongoDB	
 
  var user = new User(data)
 
