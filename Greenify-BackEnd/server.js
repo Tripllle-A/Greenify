@@ -14,15 +14,11 @@ app.use(bodyParser.json())
 
 app.use(morgan('combined'));
 // Handle / route
-app.get('/users', function (req, res) {
+app.post('/users', function (req, res) {
 
-  res.json([
-      {id:1,username:"Ammar"},
-      {id:2,username:"lele"}
-    ])
-  // 	db.User.create({username:"Ammar",password:"123"},function(data, callback){
-  		
-  // 	})
+  	db.User.create({username:req.body.username,password:req.body.password,phonenumber:req.body.phonenumber},function(data, callback){
+  		res.send(data)
+  	})
  
 
   // db.save(req.body,function(err, data){
