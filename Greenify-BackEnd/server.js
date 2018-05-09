@@ -50,7 +50,6 @@ var Promise = require('bluebird');
 
 const app = express();
 
-app.use(bodyParser())
 //app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
@@ -92,16 +91,15 @@ app.use(session({
 // })
 
 
-app.post('/signup', function(req,res){
-  var name = req.body.username
+app.post('/users', function(req,res){
+  var username = req.body.username
   var password = req.body.password
-  var obj = {'user':name , 'password':password}
+  var phonenumber = req.body.phonenumber
+  var obj = {username:username , password:password , phonenumber:phonenumber}
 
-  db.User.findOne({user:name}, function(err,user){
+  db.User.findOne({username:username}, function(err,user){
     if(err){console.log(err)}
-      else if(name === "" || name === null || name === undefined){
-        res.status(404).send('enter a valid name')
-      }
+      
       else if(!user){
         helper.hash(obj)
         res.send('you can sign in now')
