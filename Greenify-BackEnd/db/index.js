@@ -13,6 +13,7 @@ let userSchema = mongoose.Schema({
   username :String, 
   password :String,
   phonenumber:Number
+
 });
 
 let User = mongoose.model('User', userSchema);
