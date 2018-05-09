@@ -1,5 +1,5 @@
 import React from 'react';
-<<<<<<< HEAD
+
 import { StyleSheet, Text, View ,TouchableOpacity,TextInput,Image} from 'react-native';
 
 export default class App extends React.Component {
@@ -51,23 +51,12 @@ export default class App extends React.Component {
               <Text>Sign up</Text>
            </TouchableOpacity>
         </View>
-=======
-import { StyleSheet, Text, View ,TouchableOpacity } from 'react-native';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-         <TouchableOpacity onPress={this.login} style={styles.button}>
-            <Text>Click Here</Text>
-         </TouchableOpacity>
-      </View>
->>>>>>> bcrypt-testsession-helpersfunctions
     );
   }
 
   login = () => {
-<<<<<<< HEAD
+
     if(this.state.username.length && this.state.password.length && this.state.phonenumber.length  !==0){
       fetch("http://192.168.1.76:3000/users",{
           method: 'POST',
@@ -90,19 +79,10 @@ export default class App extends React.Component {
         alert('please fill all the information')
     }
  }
-
-=======
-
-    fetch("http://192.168.1.76:3000/users").then(res => {
-       alert(res);  
-   });
-}
->>>>>>> bcrypt-testsession-helpersfunctions
 }
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-<<<<<<< HEAD
     backgroundColor: 'cyan',
    
     justifyContent: 'center',
@@ -122,14 +102,5 @@ const styles = StyleSheet.create({
     padding:20,
     borderWidth:1,
     backgroundColor:'green'
-=======
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  button: {
-    padding:20,
-    borderWidth:1,
->>>>>>> bcrypt-testsession-helpersfunctions
   }
 });
