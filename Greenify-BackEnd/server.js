@@ -97,19 +97,24 @@ app.post('/users', function(req,res){
   var phonenumber = req.body.phonenumber
   var obj = {username:username , password:password , phonenumber:phonenumber}
 
-  db.User.findOne({username:username}, function(err,user){
-    if(err){console.log(err)}
-      
-      else if(!user){
-        helper.hash(obj)
-        res.send('you can sign in now')
-      }
-      else{
-        res.status(404).send('username is used')
-      }
-  })
+
+
+db.User.findOne({username: username}, function(err,user){
+  if(err){console.log(err)}
+    else if(!user){
+      helper.hash(obj,function(err,data){
+        if(err){
+          console.log(err)
+        }else{
+          res.status(200).send()
+        }
+      })
+    }else{
+      res.status(404).send()
+    }
 })
 
+})
 
 
 
