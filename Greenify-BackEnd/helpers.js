@@ -31,10 +31,16 @@ exports.comparePassword = function(password,user, cb) {
 
 
 //hashing the password and saving it to the database
-exports.hash = function(obj){
+exports.hash = function(obj, callback){
   bcrypt.hash(obj.password, 10, function(err, hash) {
     obj.password=hash
-    db.save(obj)
+    db.save(obj, function(err,data){
+      if(err){
+        callback(err,null)
+      }else{
+        callback(null,data)
+      }
+    })
 
   })
 }
