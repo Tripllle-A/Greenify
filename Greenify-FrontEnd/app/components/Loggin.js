@@ -1,22 +1,22 @@
 import React from 'react';
 
-import { StyleSheet, Text, View ,TouchableOpacity,TextInput,Image} from 'react-native';
+import { StyleSheet, Text, View ,TouchableOpacity,TextInput,Image,KeyboardAvoidingView,AsyncStorage} from 'react-native';
+import { StackNavigator } from 'react-navigation';
 
 export default class App extends React.Component {
-    constructor(){
-    super();
-    //all the data save before sent in state
-    this.state={
-      username:'',
-      password: '',
-      phonenumber:''
+    constructor(props){
+      super(props);
+      //all the data save before sent in state
+      this.state= {
+        username: '',
+        password: ''
     };
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.text}>Registration</Text>
+        <Text style={styles.text}>LOGIN</Text>
 
         <Image source={{uri: 'https://www.bbb.org/ProfileImages/0fc6a242-18d1-4868-8e91-abaf39dac8ac.png'}} style={{width: 400, height: 125}} />
 
@@ -39,27 +39,21 @@ export default class App extends React.Component {
                  autoCapitalize = "none"
                  style={styles.input}
       />
-      <TextInput
-      ref= {(el) => { this.phonenumber = el; }}
-      onChangeText={(phonenumber) => this.setState({phonenumber})}
-      value={this.state.phonenumber} underlineColorAndroid = "transparent"
-                 placeholder = "phonenumber"
-                 placeholderTextColor = "#9a73ef"
-                 autoCapitalize = "none"
-                 style={styles.input}
-      />
-           <TouchableOpacity onPress={this.signup} style={styles.button}>
-              <Text>Sign up</Text>
+           <TouchableOpacity onPress={this.login} style={styles.button}>
+              <Text>Sign in</Text>
+           </TouchableOpacity>
+           <TouchableOpacity onPress={this.check} style={styles.button}>
+              <Text>check</Text>
            </TouchableOpacity>
         </View>
 
     );
   }
 
-  signup = () => {
+  login = () => {
 
-    if(this.state.username.length && this.state.password.length && this.state.phonenumber.length  !==0){
-      fetch("http://192.168.1.109:3000/users",{
+    if(this.state.username.length && this.state.password.length !==0){
+      fetch("http://192.168.1.109:3000/login",{
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -67,14 +61,13 @@ export default class App extends React.Component {
         },
         body: JSON.stringify({
           username: this.state.username,
-          password: this.state.password,
-          phonenumber:this.state.phonenumber
+          password: this.state.password
         })
       }).then((responseData) => {
         if(responseData.status === 200){
-          alert('Signedup Successfully')
+          alert('Signedin Successfully')
         }else{
-          alert("exist")
+          alert("wrong password")
         }
        
      })
@@ -82,12 +75,22 @@ export default class App extends React.Component {
       alert('please fill all the information')
     }
   }
+
+  //   check = () => {
+
+   
+  //     fetch("http://192.168.1.109:3000/check")
+  //     .then((responseData) => {
+  //       alert('created session')
+  // })
+  //   }
+
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'cyan',
+    backgroundColor: 'white',
    
     justifyContent: 'center',
   },
