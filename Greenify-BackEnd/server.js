@@ -97,24 +97,25 @@ app.post('/users', function(req,res){
   var phonenumber = req.body.phonenumber
   var obj = {username:username , password:password , phonenumber:phonenumber}
 
-
-
-db.User.findOne({username: username}, function(err,user){
-  if(err){console.log(err)}
+  db.User.findOne({username:username}, function(err,user){
+    if(err){console.log(err)}
+      
     else if(!user){
       helper.hash(obj,function(err,data){
         if(err){
-          console.log(err)
+          console.log(err);
         }else{
-          res.status(200).send()
+          res.status(200).send('done')
         }
       })
     }else{
-      res.status(404).send()
+      res.status(404).send('exist')
     }
-})
+
+  })
 
 })
+
 
 
 
@@ -145,7 +146,10 @@ db.User.findOne({username: username}, function(err,user){
 
 
 // Launch the server on port 3000
-const server = app.listen(3000, () => {
-  const { address, port } = server.address();
-  console.log(`Listening at http://${address}:${port}`);
+if(!module.parent) {
+const port = 3000;
+const server = app.listen(port, () => {
+  console.log('Listening at http:/localhost:'+port);
 });
+}
+module.exports = app;
