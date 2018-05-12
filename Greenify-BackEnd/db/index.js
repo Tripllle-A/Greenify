@@ -10,8 +10,8 @@ db.once('open', function () {
 
 let userSchema = mongoose.Schema({
   // TODO: your schema here!
-  username :String, 
-  password :String,
+  username: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
   phonenumber:Number
 
 });

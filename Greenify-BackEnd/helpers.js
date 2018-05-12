@@ -13,9 +13,7 @@ exports.isLoggedIn = function(req) {
 exports.createSession = function(req, res, newUser) {
   return req.session.regenerate(function() {
     req.session.user = newUser;
-  //req.session.room='Public';
-  //console.log(req.session)
-  res.redirect('/');
+    res.redirect('/');
   
 });
 };
@@ -38,7 +36,7 @@ exports.hash = function(obj, callback){
       if(err){
         callback(err,null)
       }else{
-        callback(null,data)
+        callback(null,data) 
       }
     })
 
