@@ -64,24 +64,24 @@ app.use(session({
 }));
 
 
-// app.post('/login', function(req,res){
-//   var username = req.body.username;
-//   var password = req.body.password;
+app.post('/login', function(req,res){
+  var username = req.body.username;
+  var password = req.body.password;
 
-//   db.User.findOne({user:username}, function(err,user){
-//     if(err){console.log(err)}
-//       else if(!user){res.status(404).send('user is not found')}
-//         else{
-//           helper.comparaPassword(password,user,function(err,match){
-//             if(match){
-//               helper.createSession(req,res,user)
-//             }else{
-//               res.status(404).send('wrong password')
-//             }
-//           })
-//         }
-//   })
-// })
+  db.User.findOne({user:username}, function(err,user){
+    if(err){console.log(err)}
+      else if(!user){res.status(404).send('user is not found')}
+        else{
+          helper.comparaPassword(password,user,function(err,match){
+            if(match){
+              helper.createSession(req,res,user)
+            }else{
+              res.status(404).send('wrong password')
+            }
+          })
+        }
+  })
+})
 
 
 // app.get('/logout', function(req, res) {
