@@ -1,6 +1,11 @@
 var expect = require('chai').expect;
 var mongoose = require('mongoose');
 var user = require('../db/index');
+var server = require('../server.js');
+
+var supertest = require('supertest');
+
+var request = supertest.agent(server);
 
 describe('User Model', function () {
 

@@ -1,6 +1,5 @@
-var bcrypt = require('bcrypt');
-var Promise = require('bluebird');
-const db = require('./db/index.js')
+var bcrypt = require("bcrypt");
+const db = require("./db/index.js");
 
 
 //checking if the user is logged in or not 
@@ -13,7 +12,7 @@ exports.isLoggedIn = function(req) {
 exports.createSession = function(req, res, newUser) {
   return req.session.regenerate(function() {
     req.session.user = newUser;
-    res.redirect('/');
+    res.status(200).send()
   
 });
 };
@@ -21,24 +20,27 @@ exports.createSession = function(req, res, newUser) {
 //comparing password
 exports.comparePassword = function(password,user, cb) {
   bcrypt.compare(password, user.password, function(err, isMatch) {
-    if (err) return 'error';
+    if (err){
+      cb(err)
+    }else{
     cb(null, isMatch);
+  }
   });
 
-}
+};
 
 
 //hashing the password and saving it to the database
 exports.hash = function(obj, callback){
   bcrypt.hash(obj.password, 10, function(err, hash) {
-    obj.password=hash
+    obj.password=hash;
     db.save(obj, function(err,data){
       if(err){
-        callback(err,null)
+        callback(err,null);
       }else{
-        callback(null,data) 
+        callback(null,data); 
       }
-    })
+    });
 
-  })
-}
+  });
+};
