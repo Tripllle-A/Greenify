@@ -36,52 +36,52 @@
 
 // Initialize http server
 
-var express = require('express');
-var db = require('./db/index.js');
-var session = require('express-session')
-var bodyParser = require('body-parser')
+var express = require("express");
+var db = require("./db/index.js");
+var session = require("express-session");
+var bodyParser = require("body-parser");
 
 
 //var cookieParser = require('cookie-parser');
-var helper = require('./helpers.js');
-var bcrypt = require('bcrypt');
-var Promise = require('bluebird');
+var helper = require("./helpers.js");
 //var path = require('path')
 
-const app = express();
+var app = express();
 
 //app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 //app.use(morgan('combined'));
 
 app.use(session({
-  secret: 'shhh, it\'s aa secret',
+  secret: "shhh, it's aa secret",
   resave : false,
   saveUninitialized:true
   
 }));
 
 
-app.post('/login', function(req,res){
+app.post("/login", function(req,res){
   var username = req.body.username;
   var password = req.body.password;
 
-  db.User.findOne({user:username}, function(err,user){
-    if(err){console.log(err)}
-      else if(!user){res.status(404).send('user is not found')}
+  db.User.findOne({username:username}, function(err,user){
+    if(err){
+      res.send(err);
+    }
+      else if(!user){res.status(404).send("user is not found");}
         else{
-          helper.comparaPassword(password,user,function(err,match){
+          helper.comparePassword(password,user,function(err,match){
             if(match){
-              helper.createSession(req,res,user)
+              helper.createSession(req,res,user);
             }else{
-              res.status(404).send('wrong password')
+              res.status(404).send(err);
             }
-          })
+          });
         }
-  })
-})
+  });
+});
 
 
 // app.get('/logout', function(req, res) {
@@ -91,30 +91,31 @@ app.post('/login', function(req,res){
 // })
 
 
-app.post('/users', function(req,res){
-  var username = req.body.username
-  var password = req.body.password
-  var phonenumber = req.body.phonenumber
-  var obj = {username:username , password:password , phonenumber:phonenumber}
+app.post("/users", function(req,res){
+  var username = req.body.username;
+  var password = req.body.password;
+  var phonenumber = req.body.phonenumber;
+  var obj = {username:username , password:password , phonenumber:phonenumber};
 
   db.User.findOne({username:username}, function(err,user){
-    if(err){console.log(err)}
-      
-    else if(!user){
+    if(err){
+      res.send(err);
+    }
+      else if(!user){
       helper.hash(obj,function(err,data){
         if(err){
-          console.log(err);
+          res.send(err);
         }else{
-          res.status(200).send('done')
+          res.status(200).send(data);
         }
-      })
+      });
     }else{
-      res.status(404).send('exist')
+      res.status(404).send("exist");
     }
 
-  })
+  });
 
-})
+});
 
 
 
@@ -147,9 +148,9 @@ app.post('/users', function(req,res){
 
 // Launch the server on port 3000
 if(!module.parent) {
-const port = 3000;
-const server = app.listen(port, () => {
-  console.log('Listening at http:/localhost:'+port);
+var port = 3000;
+app.listen(port, () => {
+  console.log("Listening at http:/localhost:" + port );
 });
 }
 module.exports = app;
