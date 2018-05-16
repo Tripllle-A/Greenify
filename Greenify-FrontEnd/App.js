@@ -5,7 +5,7 @@ import { createStackNavigator } from 'react-navigation';
 import Login from './app/components/Loggin';
 import Profile from './app/components/Profile';
 import Signup from './app/components/Signup';
-
+//testing
 const Application = createStackNavigator({
   Home: Login,
   Profile: Profile,
