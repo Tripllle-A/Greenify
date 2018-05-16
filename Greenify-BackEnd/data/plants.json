@@ -1,0 +1,25 @@
+[{
+  "number": 1,
+  "name": "Indoor trees",
+  "imageUrl": "https://www.houseplantsexpert.com/image-files/umbrella_plant.jpg"
+  },{
+  "number": 2,
+  "name": "SUCCULENT",
+  "imageUrl": "https://www.houseplantsexpert.com/assets/images/mother_of_thousands.jpg"
+  },{
+  "number": 3,
+  "name": "Bulb",
+  "imageUrl": "https://www.houseplantsexpert.com/image-files/lilac-impatiens-walleriana-flowers.jpg"
+  },{
+  "number": 4,
+  "name": "Living Stones",
+  "imageUrl": "https://www.houseplantsexpert.com/assets/images/lithops_optica.jpg"
+  },{
+  "number": 5,
+  "name": "CACTUS",
+  "imageUrl": "https://www.houseplantsexpert.com/image-files/Disocactus-flagelliformis.jpg"
+  },{
+  "number": 6,
+  "name": "Hanging Basket",
+  "imageUrl": "https://www.houseplantsexpert.com/assets/images/bostonferns_hanging.jpg"
+  }]
