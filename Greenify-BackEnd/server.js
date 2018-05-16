@@ -121,29 +121,19 @@ app.post("/users", function(req,res){
 
 
 
-// Handle / route
-// app.get('/users', function (req, res) {
+app.get('/plants', function (req, res) {
 
-//   res.json([
-//       {id:1,username:"Ammar"},
-//       {id:2,username:"lele"}
-//     ])
-  //  db.User.create({username:"Ammar",password:"123"},function(data, callback){
-      
-  //  })
- 
+ db.Plant.find({}, function(err, plants) {
+    var plantsImg = {};
 
-  // db.save(req.body,function(err, data){
-  //  if(err){
-  //    res.send(404,err)
-  //  }else{
-  //    res.send(data)
-  //  }
-  // })
+    plants.forEach(function(plant) {
+      plantsImg[plant.imageUrl] = plant;
+    });
 
+    res.send(plantsImg);  
+  });
 
-// });
-
+});
 
 
 // Launch the server on port 3000
