@@ -16,9 +16,18 @@ let userSchema = mongoose.Schema({
 
 });
 
+
+let plantSchema = mongoose.Schema({
+	number: {type: Number, index: {unique: true} },
+	name: {type: String, index: {unique: true}},
+	imageUrl: String,
+});
+
+let Plant = mongoose.model('Plant', plantSchema);
+
 let User = mongoose.model('User', userSchema);
 
-let save = (data,callback) => {
+let saveUser = (data,callback) => {
 
  var user = new User(data)
 
@@ -32,5 +41,8 @@ let save = (data,callback) => {
 
 }
 
-module.exports.save = save;
+
+
+module.exports.save = saveUser;
 module.exports.User = User;
+module.exports.Plant = Plant;
