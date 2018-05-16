@@ -30,7 +30,7 @@ export default class Login extends React.Component {
         <View style={styles.container}>
           <Text style={styles.header}>
           - Login -
-          </Text> 
+          </Text>
           <TextInput
             style={styles.textInput} placeholder='username'
             onChangeText={(username) => this.setState({username})}
@@ -65,7 +65,7 @@ export default class Login extends React.Component {
   }
   login = () => {
     if(this.state.username.length && this.state.password.length !==0){
-      fetch("http://192.168.1.109:3000/login",{
+      fetch("http://192.168.1.83:3000/login",{
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -195,7 +195,7 @@ const styles = StyleSheet.create({
 //         }else{
 //           alert("wrong password")
 //         }
-       
+
 //      })
 //     }else{
 //       alert('please fill all the information')
@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
 
 //   //   check = () => {
 
-   
+
 //   //     fetch("http://192.168.1.109:3000/check")
 //   //     .then((responseData) => {
 //   //       alert('created session')
@@ -217,7 +217,7 @@ const styles = StyleSheet.create({
 //   container: {
 //     flex: 1,
 //     backgroundColor: 'white',
-   
+
 //     justifyContent: 'center',
 //   },
 //    input: {
