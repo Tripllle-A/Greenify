@@ -59,7 +59,7 @@ export default class App extends React.Component {
   signup = () => {
 
     if(this.state.username.length && this.state.password.length && this.state.phonenumber.length  !==0){
-      fetch("http://192.168.1.109:3000/users",{
+      fetch("http://192.168.1.83:3000/users",{
           method: 'POST',
           headers: {
               'Accept': 'application/json',
@@ -73,7 +73,7 @@ export default class App extends React.Component {
       }).then((data) => {
         if(data.status===200){
          alert('Signedup Successfully');
-         this.props.navigation.navigate('Home');
+         this.props.navigation.navigate('Login');
         }else{
           alert('username exist')
         }
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-   
+
     justifyContent: 'center',
   },
    input: {
