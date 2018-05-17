@@ -131,6 +131,18 @@ app.get('/plants', function (req, res) {
 });
 
 
+app.get('/plants/:number', function (req, res) {
+
+ var number = req.params.number;
+  db.Plant.findOne({number:number}).exec(function (err, plant) {
+    if(err){
+      console.log(err);
+    }else{
+      res.json(plant);
+    }
+  })
+});
+
 // Launch the server on port 3000
 if(!module.parent) {
 var port = 3000;
