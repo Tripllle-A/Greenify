@@ -7,6 +7,8 @@ import Intro from './app/components/Intro';
 import Login from './app/components/Login';
 import Signup from './app/components/Signup';
 import Profile from './app/components/Profile';
+import PlantsDisplay from './app/components/PlantsDisplay';
+import Plant from './app/components/Plant';
 
 //testing
 const Application = createStackNavigator({
@@ -14,6 +16,8 @@ const Application = createStackNavigator({
   Login: Login,
   Signup: Signup,
   Profile: Profile,
+  PlantsDisplay: PlantsDisplay,
+  Plant: Plant,
   },{
     initialRouteName: 'Home',
   }
