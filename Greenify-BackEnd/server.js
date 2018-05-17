@@ -124,17 +124,24 @@ app.post("/users", function(req,res){
 app.get('/plants', function (req, res) {
 
  db.Plant.find({}, function(err, plants) {
-    var plantsImg = {};
 
-    plants.forEach(function(plant) {
-      plantsImg[plant.imageUrl] = plant;
-    });
-
-    res.send(plantsImg);  
+    res.send(plants);  
   });
 
 });
 
+
+app.get('/plants/:number', function (req, res) {
+
+ var number = req.params.number;
+  db.Plant.findOne({number:number}).exec(function (err, plant) {
+    if(err){
+      console.log(err);
+    }else{
+      res.json(plant);
+    }
+  })
+});
 
 // Launch the server on port 3000
 if(!module.parent) {
