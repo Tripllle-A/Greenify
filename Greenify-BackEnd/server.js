@@ -124,13 +124,8 @@ app.post("/users", function(req,res){
 app.get('/plants', function (req, res) {
 
  db.Plant.find({}, function(err, plants) {
-    var plantsImg = {};
 
-    plants.forEach(function(plant) {
-      plantsImg[plant.imageUrl] = plant;
-    });
-
-    res.send(plantsImg);  
+    res.send(plants);  
   });
 
 });
