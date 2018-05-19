@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {ScrollView, StyleSheet, Text, View ,TouchableOpacity,TextInput,Image} from 'react-native';
-export default class PlantList extends React.Component {
+export default class MyPlants extends React.Component {
     constructor(){
     super();
    
@@ -12,8 +12,8 @@ export default class PlantList extends React.Component {
 
 
 
-  plantRetrieve = () => {
-   fetch('http://192.168.1.95:3000/plants')
+  plantsRetrieve = () => {
+   fetch('http://192.168.1.95:3000/myplants')
     .then((response) => response.json())
     .then((responseJson) => {
       // console.log(responseJson)
@@ -25,19 +25,24 @@ export default class PlantList extends React.Component {
       console.error(error);
     }); 
 }
-//   .then(function(data) {
-//     console.log(data)
-//     this.setState({
-//       plants:data
-//     })
-//   })
-//   }
+
 
 render() {
   return (
 
     <View style={styles.container}>
-      <Text> ya hala walla</Text>
+    <TouchableOpacity onPress={this.plantsRetrieve} style={styles.button}>
+    <Text>Click me</Text>
+    </TouchableOpacity>
+   <ScrollView>
+    <View style={styles.container}>
+      {this.state.plants.map((plant) => (
+      <View key={plant.number}><TouchableOpacity><Image source={{uri:plant.imageUrl}} style={{width: 400, height: 450}}/></TouchableOpacity>
+      <Text>{plant.name}</Text>
+      </View>
+      ))}
+    </View>
+    </ScrollView>
     </View>
     )
   }
