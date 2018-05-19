@@ -33,7 +33,6 @@ export default class PlantList extends React.Component {
 //   })
 //   }
 
->>>>>>> ForkingPlantBackEndRequest&ArrayInSchema&getReqFormyplants
 render() {
   const plant = this.props.navigation.getParam('plant');
   return (
