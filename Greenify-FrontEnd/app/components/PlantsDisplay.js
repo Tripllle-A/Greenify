@@ -34,13 +34,10 @@ export default class PlantList extends React.Component {
 //   }
 
 render() {
-
+  this.plantsRetrieve()
   return (
 
     <View style={styles.container}>
-    <TouchableOpacity onPress={this.plantsRetrieve} style={styles.button}>
-    <Text>Click me</Text>
-    </TouchableOpacity>
    <ScrollView>
     <View style={styles.container}>
       {this.state.plants.map((plant) => (

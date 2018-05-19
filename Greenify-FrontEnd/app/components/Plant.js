@@ -38,7 +38,7 @@ render() {
   return (
     <View style={styles.container}>
       <Text> {plant.name}</Text>
-      <Text> {plant.imageUrl}</Text>
+      <Image source={{uri:plant.imageUrl}} style={{width: 400, height: 450}}/>
       <TouchableOpacity
         style={styles.button}
         >
