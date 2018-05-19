@@ -59,7 +59,7 @@ export default class App extends React.Component {
   signup = () => {
 
     if(this.state.username.length && this.state.password.length && this.state.phonenumber.length  !==0){
-      fetch("http://192.168.1.95:3000/users",{
+      fetch("http://192.168.1.109:3000/users",{
           method: 'POST',
           headers: {
               'Accept': 'application/json',
