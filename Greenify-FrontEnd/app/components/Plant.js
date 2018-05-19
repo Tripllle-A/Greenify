@@ -11,33 +11,18 @@ export default class PlantList extends React.Component {
   }
 
 
-
-  plantRetrieve = () => {
-   fetch('http://192.168.1.95:3000/plants')
-    .then((response) => response.json())
-    .then((responseJson) => {
-      // console.log(responseJson)
-      this.setState({
-        plants:responseJson
-      });
-    })
-    .catch((error) => {
-      console.error(error);
-    }); 
-}
-//   .then(function(data) {
-//     console.log(data)
-//     this.setState({
-//       plants:data
-//     })
-//   })
-//   }
-
 render() {
+  const plant = this.props.navigation.getParam('plant');
   return (
-
     <View style={styles.container}>
-      <Text> ya hala walla</Text>
+      <Text> {plant.name}</Text>
+      <Text> {plant.imageUrl}</Text>
+      <TouchableOpacity
+        style={styles.button}
+        >
+        
+        <Text>Fork</Text>
+      </TouchableOpacity>
     </View>
     )
   }

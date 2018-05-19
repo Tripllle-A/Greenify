@@ -13,7 +13,7 @@ export default class PlantList extends React.Component {
 
 
   plantsRetrieve = () => {
-   fetch('http://192.168.1.95:3000/plants')
+   fetch('http://192.168.1.157:3000/plants')
     .then((response) => response.json())
     .then((responseJson) => {
       // console.log(responseJson)
@@ -34,6 +34,7 @@ export default class PlantList extends React.Component {
 //   }
 
 render() {
+
   return (
 
     <View style={styles.container}>
@@ -43,7 +44,7 @@ render() {
    <ScrollView>
     <View style={styles.container}>
       {this.state.plants.map((plant) => (
-      <View key={plant.number}><TouchableOpacity onPress={() => this.props.navigation.navigate('Plant')}><Image source={{uri:plant.imageUrl}} style={{width: 400, height: 450}}/></TouchableOpacity>
+      <View key={plant.number}><TouchableOpacity onPress={() => this.props.navigation.navigate('Plant',{plant:plant})}><Image source={{uri:plant.imageUrl}} style={{width: 400, height: 450}}/></TouchableOpacity>
       <Text>{plant.name}</Text>
       </View>
       ))}
