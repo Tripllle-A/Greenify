@@ -12,7 +12,8 @@ export default class ProfileIntro extends React.Component {
     return (
       <View style={styles.container}>
       <View style={styles.container}>
-      <TouchableOpacity style={styles.container}>
+      <TouchableOpacity style={styles.container} 
+      onPress={() => this.props.navigation.navigate('MyPlants')}>
              <ImageBackground
         style={{
           backgroundColor: '#ccc',

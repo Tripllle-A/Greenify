@@ -20,7 +20,8 @@ let userSchema = mongoose.Schema({
 let plantSchema = mongoose.Schema({
 	number: {type: Number, index: {unique: true} },
 	name: {type: String, index: {unique: true}},
-	imageUrl: String,
+	description: String,
+	imageUrl: String
 });
 
 let Plant = mongoose.model('Plant', plantSchema);

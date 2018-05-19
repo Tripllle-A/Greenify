@@ -13,7 +13,7 @@ export default class PlantList extends React.Component {
 
 
   plantsRetrieve = () => {
-   fetch('http://192.168.1.83:3000/plants')
+   fetch('http://192.168.1.95:3000/plants')
     .then((response) => response.json())
     .then((responseJson) => {
       // console.log(responseJson)

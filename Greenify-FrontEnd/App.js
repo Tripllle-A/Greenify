@@ -9,6 +9,7 @@ import Signup from './app/components/Signup';
 import Profile from './app/components/Profile';
 import PlantsDisplay from './app/components/PlantsDisplay';
 import Plant from './app/components/Plant';
+import MyPlants from './app/components/MyPlants';
 
 //testing
 const Application = createStackNavigator({
@@ -18,6 +19,7 @@ const Application = createStackNavigator({
   Profile: Profile,
   PlantsDisplay: PlantsDisplay,
   Plant: Plant,
+  MyPlants: MyPlants
   },{
     initialRouteName: 'Home',
   }
