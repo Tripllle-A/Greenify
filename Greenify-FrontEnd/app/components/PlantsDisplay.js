@@ -13,7 +13,7 @@ export default class PlantList extends React.Component {
 
 
   plantsRetrieve = () => {
-   fetch('http://192.168.1.157:3000/plants')
+   fetch('http://192.168.1.109:3000/plants')
     .then((response) => response.json())
     .then((responseJson) => {
       // console.log(responseJson)
@@ -34,13 +34,10 @@ export default class PlantList extends React.Component {
 //   }
 
 render() {
-
+  this.plantsRetrieve()
   return (
 
     <View style={styles.container}>
-    <TouchableOpacity onPress={this.plantsRetrieve} style={styles.button}>
-    <Text>Click me</Text>
-    </TouchableOpacity>
    <ScrollView>
     <View style={styles.container}>
       {this.state.plants.map((plant) => (

@@ -13,8 +13,8 @@ exports.createSession = function(req, res, newUser) {
   return req.session.regenerate(function() {
     req.session.user = newUser;
     res.status(200).send()
-  
-});
+    console.log(req.session);
+   });
 };
 
 //comparing password

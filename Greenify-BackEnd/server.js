@@ -63,6 +63,7 @@ app.use(session({
 
 
 app.post("/login", function(req,res){
+
   var username = req.body.username;
   var password = req.body.password;
 
@@ -75,11 +76,13 @@ app.post("/login", function(req,res){
           helper.comparePassword(password,user,function(err,match){
             if(match){
               helper.createSession(req,res,user);
+
             }else{
               res.status(404).send(err);
             }
           });
         }
+        
   });
 });
 
@@ -129,6 +132,37 @@ app.get('/plants', function (req, res) {
   });
 
 });
+
+
+app.get('/myplants', function (req, res) {
+    var actual = req.session.user.username
+    db.User.findOne({username:actual},function(err,user){
+      res.send(user.plants)
+    })
+});
+
+
+app.post('/forkOne', function (req, res){
+    var plant = req.body.name
+
+    db.Plant.findOne({name:plant}, function(err, plant){
+        var actual = req.session.user.username
+        if(plant.users.indexOf(actual) === -1){
+          plant.users.push(actual)
+          db.Plant.save(plant)
+        }
+    })
+
+    db.User.findOne({user:req.session.user.username}, function(err,user){
+      user.plants = req.body.name
+      db.User.save(user)
+    })
+})
+
+
+
+
+
 
 
 app.get('/plants/:number', function (req, res) {
