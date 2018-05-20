@@ -36,7 +36,6 @@ export default class PlantList extends React.Component {
 //   }
 
 render() {
-  this.plantsRetrieve()
   return (
 
     <View style={styles.container}>
