@@ -64,7 +64,7 @@ export default class Login extends React.Component {
   }
   login = () => {
     if(this.state.username.length && this.state.password.length !==0){
-      fetch("http://192.168.1.95:3000/login",{
+      fetch(process.env.DB_URL+"/login",{
         method: 'POST',
         headers: {
           'Accept': 'application/json',

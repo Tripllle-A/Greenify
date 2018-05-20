@@ -14,7 +14,8 @@ export default class PlantList extends React.Component {
 
 
   plantsRetrieve = () => {
-   fetch('http://192.168.1.95:3000/plants')
+    console.log(process.env.DB_URL+'/plants')
+   fetch(process.env.DB_URL+'/plants')
     .then((response) => response.json())
     .then((responseJson) => {
       // console.log(responseJson)
