@@ -82,7 +82,7 @@ app.post("/users", function(req,res){
 
 
 
-app.get('/plants', function (req, res) {
+app.get("/plants", function (req, res) {
 
  db.Plant.find({}, function(err, plants) {
 
@@ -92,17 +92,17 @@ app.get('/plants', function (req, res) {
 });
 
 
-app.get('/myplants', function (req, res) {
-    var actual = req.session.user.username
+app.get("/myplants", function (req, res) {
+    var actual = req.session.user.username;
     db.User.findOne({username:actual},function(err,user){
-      res.send(user.plants)
-    })
+      res.send(user.plants);
+    });
 });
 
 
-app.post('/forkOne', function (req, res){
-    var plant = req.body.name
-    console.log("plant",plant)
+app.post("/forkOne", function (req, res){
+    var plant = req.body.name;
+    console.log("plant",plant);
     db.User.findOne({username:req.session.user.username}, function(err,user){
        db.Plant.findOne({name:plant}, function(err, plant){
         if (err) {
@@ -114,23 +114,23 @@ app.post('/forkOne', function (req, res){
           user.plants.push(plant._id);
           user.save();
         }
-      })
-    })
-})
+      });
+    });
+});
 
 
 
-app.get('/viewProfile', function(req, res) {
+app.get("/viewProfile", function(req, res) {
   db.User.findOne({username: req.session.user.username})
-    .populate('plants')
+    .populate("plants")
     .exec(function(err, user) {
       res.send(user);
-    })
-})
+    });
+});
 
 
 
-app.get('/plants/:number', function (req, res) {
+app.get("/plants/:number", function (req, res) {
 
  var number = req.params.number;
   db.Plant.findOne({number:number}).exec(function (err, plant) {
@@ -139,7 +139,7 @@ app.get('/plants/:number', function (req, res) {
     }else{
       res.json(plant);
     }
-  })
+  });
 });
 
 // Launch the server on port 3000
