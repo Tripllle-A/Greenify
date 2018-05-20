@@ -12,7 +12,7 @@ exports.isLoggedIn = function(req) {
 exports.createSession = function(req, res, newUser) {
   return req.session.regenerate(function() {
     req.session.user = newUser;
-    res.status(200).send()
+    res.status(200).send();
    });
 };
 
@@ -20,7 +20,7 @@ exports.createSession = function(req, res, newUser) {
 exports.comparePassword = function(password,user, cb) {
   bcrypt.compare(password, user.password, function(err, isMatch) {
     if (err){
-      cb(err)
+      cb(err);
     }else{
     cb(null, isMatch);
   }
