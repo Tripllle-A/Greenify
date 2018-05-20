@@ -13,8 +13,7 @@ export default class PlantList extends React.Component {
 
 
 
-  plantsRetrieve = () => {
-    console.log(process.env.DB_URL+'/plants')
+  componentDidMount = () => {
    fetch(process.env.DB_URL+'/plants')
     .then((response) => response.json())
     .then((responseJson) => {
