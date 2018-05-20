@@ -121,7 +121,7 @@ app.post('/forkOne', function (req, res){
 
 
 app.get('/viewProfile', function(req, res) {
-  db.User.findOne({username: "a"})
+  db.User.findOne({username: req.session.user.username})
     .populate('plants')
     .exec(function(err, user) {
       res.send(user);
