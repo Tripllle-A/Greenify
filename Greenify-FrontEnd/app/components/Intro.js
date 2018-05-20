@@ -1,6 +1,7 @@
 import React from 'react';
 import Infoslider from 'react-native-infoslider';
 import { ScrollView,StyleSheet, Text, View ,TouchableOpacity,TextInput,Image} from 'react-native';
+
 export default class Intro extends React.Component {
     constructor(){
     super();

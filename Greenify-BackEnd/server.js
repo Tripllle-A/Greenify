@@ -1,41 +1,3 @@
-// <<<<<<< HEAD
-// import express from 'express';
-// import morgan from 'morgan';
-// import mongoose from 'mongoose';
-
-// // Initialize http server
-// const app = express();
-
-// let db = require('./db/index.js');
-// var bodyParser = require('body-parser')
-
-
-// app.use(bodyParser.urlencoded({ extended: false }))
-// app.use(bodyParser.json())
-
-// app.use(morgan('combined'));
-
-// app.post('/users', function (req, res) {
-
-//   	db.User.create({username:req.body.username,password:req.body.password,phonenumber:req.body.phonenumber},function(data, callback){
-//   		res.send(data)
-//   	})
- 
-
-//   // db.save(req.body,function(err, data){
-//   // 	if(err){
-//   // 		res.send(404,err)
-//   // 	}else{
-//   // 		res.send(data)
-//   // 	}
-//   // })
-
-
-// });
-// =======
-
-// Initialize http server
-
 var express = require("express");
 var db = require("./db/index.js");
 var session = require("express-session");
@@ -44,15 +6,11 @@ var bodyParser = require("body-parser");
 
 //var cookieParser = require('cookie-parser');
 var helper = require("./helpers.js");
-//var path = require('path')
-
 var app = express();
 
 //app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
-//app.use(morgan('combined'));
 
 app.use(session({
   secret: "shhh, it's aa secret",
@@ -145,24 +103,8 @@ app.get('/myplants', function (req, res) {
 app.post('/forkOne', function (req, res){
     var plant = req.body.name
     console.log("plant",plant)
-    // db.Plant.findOne({name:plant}, function(err, plant){
-    //     var actual = req.session.user.username
-    //     if(plant.users.indexOf(actual) === -1){
-    //       plant.users.push(actual)
-    //       db.Plant.save(plant)
-    //     }
-    // })
-//req.session.user.username
     db.User.findOne({username:req.session.user.username}, function(err,user){
-    //   user.plants.push(plant)
-    //   db.save(user, function(err,data){
-    //   if(err){
-    //     console.log(err,null);
-    //   }else{
-    //     console.log(null,data); 
-    //   }
-    // })
-      db.Plant.findOne({name:plant}, function(err, plant){
+       db.Plant.findOne({name:plant}, function(err, plant){
         if (err) {
           console.error(err);
         }
