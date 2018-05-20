@@ -144,24 +144,47 @@ app.get('/myplants', function (req, res) {
 
 app.post('/forkOne', function (req, res){
     var plant = req.body.name
-
-    db.Plant.findOne({name:plant}, function(err, plant){
-        var actual = req.session.user.username
-        if(plant.users.indexOf(actual) === -1){
-          plant.users.push(actual)
-          db.Plant.save(plant)
+    console.log("plant",plant)
+    // db.Plant.findOne({name:plant}, function(err, plant){
+    //     var actual = req.session.user.username
+    //     if(plant.users.indexOf(actual) === -1){
+    //       plant.users.push(actual)
+    //       db.Plant.save(plant)
+    //     }
+    // })
+//req.session.user.username
+    db.User.findOne({username:req.session.user.username}, function(err,user){
+    //   user.plants.push(plant)
+    //   db.save(user, function(err,data){
+    //   if(err){
+    //     console.log(err,null);
+    //   }else{
+    //     console.log(null,data); 
+    //   }
+    // })
+      db.Plant.findOne({name:plant}, function(err, plant){
+        if (err) {
+          console.error(err);
         }
-    })
-
-    db.User.findOne({user:req.session.user.username}, function(err,user){
-      user.plants = req.body.name
-      db.User.save(user)
+        if (!plant) {
+          console.error("no plants");
+        } else {
+          user.plants.push(plant._id);
+          user.save();
+        }
+      })
     })
 })
 
 
 
-
+app.get('/viewProfile', function(req, res) {
+  db.User.findOne({username: "a"})
+    .populate('plants')
+    .exec(function(err, user) {
+      res.send(user);
+    })
+})
 
 
 

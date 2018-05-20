@@ -7,23 +7,27 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 db.once('open', function () {
 	console.log("connected")
 });
+let plantSchema = mongoose.Schema({
+	number: {type: Number, index: {unique: true} },
+	name: {type: String, index: {unique: true}},
+	description: String,
+	imageUrl: String,
+  // users:[String]
+});
 
 let userSchema = mongoose.Schema({
   // TODO: your schema here!
   username: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   phonenumber:Number,
-  plants: Array
-  // plants: [plantSchema]
+  //plants: Array
+  plants: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Plant'
+    }]
 });
 
-let plantSchema = mongoose.Schema({
-	number: {type: Number, index: {unique: true} },
-	name: {type: String, index: {unique: true}},
-	description: String,
-	imageUrl: String,
-  users:[String]
-});
+
 
 let Plant = mongoose.model('Plant', plantSchema);
 
