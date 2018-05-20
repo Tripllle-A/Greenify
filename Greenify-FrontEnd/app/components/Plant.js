@@ -5,26 +5,30 @@ export default class PlantList extends React.Component {
     constructor(){
     super();
    
-    this.state={
-      plants: []
-    };
+
   }
 
 
 
-  plantRetrieve = () => {
-   fetch('http://192.168.1.109:3000/plants')
-    .then((response) => response.json())
-    .then((responseJson) => {
-      // console.log(responseJson)
-      this.setState({
-        plants:responseJson
-      });
-    })
-    .catch((error) => {
-      console.error(error);
-    }); 
-}
+ fork = () => {
+
+   
+      fetch("http://192.168.1.95:3000/forkOne",{
+          method: 'POST',
+          headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(this.props.navigation.getParam('plant'))
+      }).then((data) => {
+        if(data.status===200){
+         alert('Signedup Successfully');
+         this.props.navigation.navigate('Login');
+        }else{
+          alert('username exist')
+        }
+      })
+  }
 //   .then(function(data) {
 //     console.log(data)
 //     this.setState({
@@ -34,13 +38,14 @@ export default class PlantList extends React.Component {
 //   }
 
 render() {
-  const plant = this.props.navigation.getParam('plant');
+ const plant = this.props.navigation.getParam('plant');
   return (
     <View style={styles.container}>
       <Text> {plant.name}</Text>
       <Image source={{uri:plant.imageUrl}} style={{width: 400, height: 450}}/>
       <TouchableOpacity
         style={styles.button}
+        onPress = {this.fork}
         >
         
         <Text>Fork</Text>
