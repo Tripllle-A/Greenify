@@ -11,7 +11,7 @@ export default class PlantList extends React.Component {
 
 
 
- fork = () => {
+ componentDidMount = () => {
 
    
       fetch(process.env.DB_URL+"/forkOne",{
