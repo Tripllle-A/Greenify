@@ -14,7 +14,7 @@ export default class MyPlants extends React.Component {
 
 
 componentDidMount = () => {
-   fetch(process.env.DB_URL+"/viewProfile")
+   fetch("http://192.168.1.109:3000/viewProfile")
     .then((response) => response.json())
     .then((responseJson) => {
        console.log(22,responseJson)
