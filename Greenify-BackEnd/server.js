@@ -45,11 +45,11 @@ app.post("/login", function(req,res){
 });
 
 
-// app.get('/logout', function(req, res) {
-//   req.session.destroy(function() {
-//     res.redirect('/login');
-//   });
-// })
+app.get('/logout', function(req, res) {
+  req.session.destroy(function() {
+    res.send('Loggedout');
+  });
+})
 
 
 app.post("/users", function(req,res){

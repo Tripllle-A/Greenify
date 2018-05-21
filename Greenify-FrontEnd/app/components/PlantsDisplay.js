@@ -14,6 +14,7 @@ export default class PlantList extends React.Component {
 
 
   componentDidMount = () => {
+    console.log(process.env.DB_URL)
    fetch(process.env.DB_URL+'/plants')
     .then((response) => response.json())
     .then((responseJson) => {
@@ -26,28 +27,31 @@ export default class PlantList extends React.Component {
       console.error(error);
     }); 
 }
-//   .then(function(data) {
-//     console.log(data)
-//     this.setState({
-//       plants:data
-//     })
-//   })
-//   }
 
 render() {
   return (
 
-    <View style={styles.container}>
-   <ScrollView>
-    <View style={styles.container}>
-      {this.state.plants.map((plant) => (
-      <View key={plant.number}><TouchableOpacity onPress={() => this.props.navigation.navigate('Plant',{plant:plant})}><Image source={{uri:plant.imageUrl}} style={{width: 400, height: 450}}/></TouchableOpacity>
-      <Text>{plant.name}</Text>
+  <View style={styles.container}>
+    <ScrollView>
+      <View style={styles.container}>
+        {this.state.plants.map((plant) => (
+        <View  key={plant.number} style={{ flexDirection: 'row', flex: 1,borderWidth:3,borderColor:'#97a884'}}>
+          <View>
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Plant',{plant:plant})}>
+              <Image source={{uri:plant.imageUrl}} style={{width: 200, height: 200, borderRadius:35}}/>
+            </TouchableOpacity>
+        </View>
+        <View>
+            <Text style={styles.text}>{plant.name}</Text>
+            <Text style={styles.texto}>Type: QWEQWE</Text>
+            <Text style={styles.texto}>Color: SDFGFHVB</Text>
+            <Text style={styles.texto}>Time: CVDFDSDS</Text>
+          </View>
+        </View>
+          ))}
       </View>
-      ))}
-    </View>
     </ScrollView>
-    </View>
+  </View>
     )
   }
 }
@@ -55,9 +59,7 @@ render() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
-   
-    justifyContent: 'center',
+    backgroundColor: '#cbeaa8',
 
   },
    input: {
@@ -67,9 +69,14 @@ const styles = StyleSheet.create({
     borderWidth: 1
    },
    text:{
-    fontSize:50,
-    textAlign:'center',
-    paddingBottom:60,
+    fontSize:15,
+    marginLeft:60,
+    marginBottom:30,
+    marginTop:10
+   },
+    texto:{
+    marginLeft:50,
+    marginBottom:10
    },
   button: {
     padding:20,
