@@ -11,7 +11,7 @@ export default class PlantList extends React.Component {
 
 
 
- componentDidMount = () => {
+ fork = () => {
 
    
       fetch("http://192.168.1.109:3000/forkOne",{
@@ -23,10 +23,10 @@ export default class PlantList extends React.Component {
           body: JSON.stringify(this.props.navigation.getParam('plant'))
       }).then((data) => {
         if(data.status===200){
-         alert('Signedup Successfully');
-         this.props.navigation.navigate('Login');
+         alert('forked Successfully');
+         this.props.navigation.navigate('PlantsDisplay');
         }else{
-          alert('username exist')
+          alert('plant exist')
         }
       })
   }

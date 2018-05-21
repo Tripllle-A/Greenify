@@ -107,12 +107,13 @@ app.post("/forkOne", function (req, res){
        db.Plant.findOne({name:plant}, function(err, plant){
         if (err) {
           console.error(err);
-        }
-        if (!plant) {
-          console.error("no plants");
         } else {
+          if(user.plants.indexOf(plant._id) === -1){
           user.plants.push(plant._id);
+          console.log(1111222222233333,user.plants)
           user.save();
+          res.status(200).send()
+          }
         }
       });
     });
