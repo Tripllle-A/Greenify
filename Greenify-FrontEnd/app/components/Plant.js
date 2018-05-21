@@ -11,10 +11,10 @@ export default class PlantList extends React.Component {
 
 
 
- fork = () => {
+ componentDidMount = () => {
 
    
-      fetch(process.env.DB_URL+"/forkOne",{
+      fetch("http://192.168.1.109:3000/forkOne",{
           method: 'POST',
           headers: {
               'Accept': 'application/json',

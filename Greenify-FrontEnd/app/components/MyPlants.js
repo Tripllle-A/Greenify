@@ -13,13 +13,13 @@ export default class MyPlants extends React.Component {
 
 
 
-  plantsRetrieve = () => {
-   fetch(process.env.DB_URL+'/myplants')
+componentDidMount = () => {
+   fetch("http://192.168.1.109:3000/viewProfile")
     .then((response) => response.json())
     .then((responseJson) => {
-      // console.log(responseJson)
+       console.log(22,responseJson)
       this.setState({
-        plants:responseJson
+        plants:responseJson.plants
       });
     })
     .catch((error) => {
@@ -30,11 +30,7 @@ export default class MyPlants extends React.Component {
 
 render() {
   return (
-
     <View style={styles.container}>
-    <TouchableOpacity onPress={this.plantsRetrieve} style={styles.button}>
-    <Text>Click me</Text>
-    </TouchableOpacity>
    <ScrollView>
     <View style={styles.container}>
       {this.state.plants.map((plant) => (

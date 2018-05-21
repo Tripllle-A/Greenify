@@ -34,8 +34,7 @@ export default class Intro extends React.Component {
     return (
 
       <View style={styles.container}>
-       <ScrollView contentContainerStyle={styles.contentContainer}>
-
+      <ScrollView contentContainerStyle={styles.contentContainer}>
       <View style={styles.container}>
        <Infoslider 
         data={this.state.data} 
