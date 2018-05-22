@@ -1,6 +1,6 @@
 import React from "react";
 import Infoslider from "react-native-infoslider";
-import { ScrollView,StyleSheet, Text, View ,TouchableOpacity,TextInput,Image} from "react-native";
+import { ScrollView,StyleSheet, Text, View ,TouchableOpacity,TextInput,Image,Linking} from "react-native";
 
 export default class Intro extends React.Component {
     constructor(){
@@ -47,26 +47,31 @@ export default class Intro extends React.Component {
         autoplay={true} 
         autoplayTimeout={3}/>
         </View>
-        <View style={styles.container}>
-        <Image source={{uri:"https://www.maximumventure.ca/wp-content/uploads/2017/04/greenify-logo.jpg"}} style={{width: 400, height: 125}}/>
-        </View>
       
         <View style={{ justifyContent: "center", alignItems: "center", flexDirection: "row", flex: 1}}>
-  <View style={styles.margin}>
-     <TouchableOpacity onPress={() => this.props.navigation.navigate("Login")} style={styles.button}>
+          <View style={styles.margin}>
+           <TouchableOpacity onPress={() => this.props.navigation.navigate("Login")} style={styles.button}>
               <Text>Sign In</Text>
            </TouchableOpacity>
-  </View>
-  <View>
-    <TouchableOpacity onPress={() => this.props.navigation.navigate("Signup")} style={styles.button}>
+          </View>
+        <View>
+           <TouchableOpacity onPress={() => this.props.navigation.navigate("Signup")} style={styles.button}>
               <Text>Sign Up</Text>
            </TouchableOpacity>
-  </View>
-</View>
-         
-
-         
+          </View>
+        </View>
           </ScrollView>
+         <View style={{flex: 3, flexDirection: 'row',justifyContent: "center"}}>
+       <Text style={{fontSize:20,paddingTop:7}}>
+        Join us:
+      </Text>
+      <TouchableOpacity onPress={() => Linking.openURL('http://facebook.com')} >
+        <Image borderRadius={50} source={{uri:'http://logok.org/wp-content/uploads/2014/10/Facebook-logo-f.png'}} style={{width: '33%', height: 45,width:40}} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => Linking.openURL('http://twitter.com')}>
+         <Image borderRadius={50} source={{uri:'https://cdn2.iconfinder.com/data/icons/minimalism/512/twitter.png'}} style={{width: '33%', height: 45,width:40}} />
+        </TouchableOpacity>
+      </View>
         </View>
 
     );
@@ -97,10 +102,13 @@ const styles = StyleSheet.create({
     textAlign:"center",
     paddingBottom:60,
    },
-  button: {
-    padding:20,
+ button: {
+    padding:15,
     borderWidth:1,
-    backgroundColor:"green"
+    borderRadius:20,
+    marginRight:10,
+    marginLeft:10,
+    backgroundColor:'#0bba22'
   },
   contentContainer:{
     paddingVertical: 20
