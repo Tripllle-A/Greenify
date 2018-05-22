@@ -5,7 +5,7 @@ var data = require("./data/plants.json");
 var insertAllPlants = function() {
 	console.log(data);
 	 db.Plant.create(data, function(err, data) {
-    db.disconnect();
+    // db.disconnect();
 	});
 	};
 

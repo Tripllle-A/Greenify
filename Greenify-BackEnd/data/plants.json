@@ -1,25 +1,31 @@
 [{
   "number": 1,
   "name": "Indoor trees",
-  "imageUrl": "https://www.houseplantsexpert.com/image-files/umbrella_plant.jpg"
+  "imageUrl": "https://www.houseplantsexpert.com/image-files/umbrella_plant.jpg",
+  "description":"Tree type plants are suited displayed in parts of the home where they tend to get noticed well, a kind of focal point or some prefer the bonsai types."
   },{
   "number": 2,
   "name": "SUCCULENT",
-  "imageUrl": "https://www.houseplantsexpert.com/assets/images/mother_of_thousands.jpg"
+  "imageUrl": "https://www.houseplantsexpert.com/assets/images/mother_of_thousands.jpg",
+  "description":"The list of succulent plants that can be grown indoors successfully is nearly endless. There are many wonderful species."
   },{
   "number": 3,
   "name": "Bulb",
-  "imageUrl": "https://www.houseplantsexpert.com/image-files/lilac-impatiens-walleriana-flowers.jpg"
+  "imageUrl": "https://www.houseplantsexpert.com/image-files/lilac-impatiens-walleriana-flowers.jpg",
+  "description":"Growing bulbous plants is easy when choosing the right species. How to care is important to learn and the differences between these and other root systems."
   },{
   "number": 4,
   "name": "Living Stones",
-  "imageUrl": "https://www.houseplantsexpert.com/assets/images/lithops_optica.jpg"
+  "imageUrl": "https://www.houseplantsexpert.com/assets/images/lithops_optica.jpg",
+  "description":"Living stones are a unique type of plant that resemble stones or pebbles to camouflage them, for protection."
   },{
   "number": 5,
   "name": "CACTUS",
-  "imageUrl": "https://www.houseplantsexpert.com/image-files/Disocactus-flagelliformis.jpg"
+  "imageUrl": "https://www.houseplantsexpert.com/image-files/Disocactus-flagelliformis.jpg",
+  "description":"If you have enough light and warmth you can grow cacti. Many interesting and peculiar features have enabled these to become plants for the hobbyist."
   },{
   "number": 6,
   "name": "Hanging Basket",
-  "imageUrl": "https://www.houseplantsexpert.com/assets/images/bostonferns_hanging.jpg"
+  "imageUrl": "https://www.houseplantsexpert.com/assets/images/bostonferns_hanging.jpg",
+  "description":"Hanging basket house plants are fabulous displayed within certain areas of the home. Conservatories are the most suited place to grow these."
   }]
