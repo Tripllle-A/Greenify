@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { StyleSheet, Text, View ,TouchableOpacity,TextInput,Image} from 'react-native';
+import { StyleSheet, Text, View ,TouchableOpacity,TextInput,Image,KeyboardAvoidingView} from 'react-native';
 
 export default class App extends React.Component {
     constructor(){
@@ -15,51 +15,56 @@ export default class App extends React.Component {
 
   render() {
     return (
+      <KeyboardAvoidingView
+      style={styles.container}
+      behavior="padding"
+    >
       <View style={styles.container}>
-        <Text style={styles.text}>Registration</Text>
-
-        <Image source={{uri: 'https://www.bbb.org/ProfileImages/0fc6a242-18d1-4868-8e91-abaf39dac8ac.png'}} style={{width: 400, height: 125}} />
-
+       <Image source={{uri:'https://i.pinimg.com/originals/e8/88/d4/e888d4feff8fd5ff63a965471a94b874.gif'}} style={styles.container} />
+        <View style={{marginTop:10,marginBottom:10,marginRight:25,marginLeft:25}}>
+        <Text style={{textAlign:'center'}}>Username</Text>
         <TextInput
       ref= {(el) => { this.username = el; }}
       onChangeText={(username) => this.setState({username})}
       value={this.state.username} underlineColorAndroid = "transparent"
                  placeholder = "username"
-                 placeholderTextColor = "#9a73ef"
                  autoCapitalize = "none"
                  style={styles.input}
       />
+      <Text style={{textAlign:'center'}}>Password</Text>
       <TextInput
       ref= {(el) => { this.password = el; }}
       onChangeText={(password) => this.setState({password})}
       value={this.state.password} underlineColorAndroid = "transparent"
                  secureTextEntry = {true}
                  placeholder = "Password"
-                 placeholderTextColor = "#9a73ef"
                  autoCapitalize = "none"
                  style={styles.input}
       />
+      <Text style={{textAlign:'center'}}>PhoneNumber</Text>
       <TextInput
       ref= {(el) => { this.phonenumber = el; }}
       onChangeText={(phonenumber) => this.setState({phonenumber})}
       value={this.state.phonenumber} underlineColorAndroid = "transparent"
                  placeholder = "phonenumber"
-                 placeholderTextColor = "#9a73ef"
                  autoCapitalize = "none"
                  style={styles.input}
       />
            <TouchableOpacity onPress={this.signup} style={styles.button}>
-              <Text>Sign up</Text>
+              <Text style={{textAlign:'center'}}>Sign up</Text>
            </TouchableOpacity>
+          
+           </View>
+            <Text style={{textAlign:'center',marginBottom:10,marginTop:10}}>Already have account        .<Text style={{color:'blue'}} onPress={this.goToSignIn}>Sign In</Text></Text>
         </View>
-
+        </KeyboardAvoidingView>
     );
   }
 
   signup = () => {
 
     if(this.state.username.length && this.state.password.length && this.state.phonenumber.length  !==0){
-      fetch("http://192.168.1.109:3000/users",{
+      fetch("http://192.168.1.95:3000/users",{
           method: 'POST',
           headers: {
               'Accept': 'application/json',
@@ -82,20 +87,25 @@ export default class App extends React.Component {
       alert('please fill all the information')
     }
   }
+
+  goToSignIn = () => {
+    this.props.navigation.navigate('Login');
+  }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-
     justifyContent: 'center',
   },
    input: {
+    borderRadius:10,
     margin: 15,
     height: 40,
-    borderColor: '#7a42f4',
-    borderWidth: 1
+    borderColor: '#cbeaa8',
+    borderWidth: 1,
+    
    },
    text:{
     fontSize:50,
@@ -105,6 +115,9 @@ const styles = StyleSheet.create({
   button: {
     padding:20,
     borderWidth:1,
-    backgroundColor:'green'
+    borderRadius:20,
+    marginRight:30,
+    marginLeft:30,
+    backgroundColor:'#0bba22'
   }
 });
