@@ -14,7 +14,7 @@ export default class MyPlants extends React.Component {
 
 
 componentDidMount = () => {
-   fetch("http://192.168.1.95:3000/viewProfile")
+   fetch("http://192.168.1.109:3000/viewProfile")
     .then((response) => response.json())
     .then((responseJson) => {
        console.log(22,responseJson)
@@ -34,7 +34,9 @@ render() {
    <ScrollView>
     <View style={styles.container}>
       {this.state.plants.map((plant) => (
-      <View key={plant.number}><TouchableOpacity><Image source={{uri:plant.imageUrl}} style={{width: 400, height: 450}}/></TouchableOpacity>
+      <View key={plant.number}>
+      <TouchableOpacity onPress={() => this.props.navigation.navigate('PlantProgress',{plant:plant})}>
+      <Image source={{uri:plant.imageUrl}} style={{width: 400, height: 450}}/></TouchableOpacity>
       <Text>{plant.name}</Text>
       </View>
       ))}
