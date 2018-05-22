@@ -66,10 +66,10 @@ export default class Intro extends React.Component {
         Join us:
       </Text>
       <TouchableOpacity onPress={() => Linking.openURL('http://facebook.com')} >
-        <Image borderRadius={50} source={{uri:'http://logok.org/wp-content/uploads/2014/10/Facebook-logo-f.png'}} style={{width: '33%', height: 45,width:40}} />
+        <Image source={{uri:'http://logok.org/wp-content/uploads/2014/10/Facebook-logo-f.png'}} style={{width: '33%', height: 45,width:40}} />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => Linking.openURL('http://twitter.com')}>
-         <Image borderRadius={50} source={{uri:'https://cdn2.iconfinder.com/data/icons/minimalism/512/twitter.png'}} style={{width: '33%', height: 45,width:40}} />
+         <Image source={{uri:'https://cdn2.iconfinder.com/data/icons/minimalism/512/twitter.png'}} style={{width: '33%', height: 45,width:40}} />
         </TouchableOpacity>
       </View>
         </View>
