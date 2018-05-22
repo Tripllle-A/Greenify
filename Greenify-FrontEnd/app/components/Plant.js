@@ -14,7 +14,7 @@ export default class PlantList extends React.Component {
  fork = () => {
 
    
-      fetch("http://192.168.1.109:3000/forkOne",{
+      fetch("http://192.168.1.95:3000/forkOne",{
           method: 'POST',
           headers: {
               'Accept': 'application/json',
