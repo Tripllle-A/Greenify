@@ -64,6 +64,7 @@ export default class App extends React.Component {
   signup = () => {
 
     if(this.state.username.length && this.state.password.length && this.state.phonenumber.length  !==0){
+      console.log("aaaaaaaaaaaaaaa",DB_URL)
       fetch(DB_URL+"/users",{
           method: 'POST',
           headers: {

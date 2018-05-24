@@ -12,9 +12,12 @@ render() {
  const plant = this.props.navigation.getParam('plant');
   return (
     <View style={styles.container}>
-      <Text> {plant.name}</Text>
-      <Image source={{uri:plant.imageUrl}} style={{width: 400, height: 450}}/>
-      <Text> {plant.description}</Text>
+      <Image source={{uri:plant.imageUrl}} style={{width: 175, height: 200,margin:25}} borderRadius={20}/>
+      
+      <Text style={styles.text}>{plant.name}</Text>
+      <View style={{borderWidth:1,borderRadius:5,margin:10}}>
+      <Text style={{margin:15,fontSize:16,textAlign:'center',fontFamily:'notoserif'}}> {plant.description}</Text>
+      </View>
     </View>
     )
   }
@@ -23,8 +26,8 @@ render() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
-   
+    backgroundColor: '#deede7',
+    alignItems: "center",
     justifyContent: 'center',
 
   },
@@ -35,9 +38,11 @@ const styles = StyleSheet.create({
     borderWidth: 1
    },
    text:{
-    fontSize:50,
+    fontSize:20,
     textAlign:'center',
-    paddingBottom:60,
+    margin:15,
+    fontWeight:'bold',
+    color:'#7ead9b'
    },
   button: {
     padding:20,

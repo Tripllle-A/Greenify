@@ -14,7 +14,7 @@ export default class MyPlants extends React.Component {
 
 
 componentDidMount = () => {
-  
+  console.log("aaaaaaaaaaaaaaa",DB_URL)
    fetch(DB_URL + "/viewProfile")
     .then((response) => response.json())
     .then((responseJson) => {
@@ -35,10 +35,10 @@ render() {
    <ScrollView>
     <View style={styles.container}>
       {this.state.plants.map((plant) => (
-      <View key={plant.number}>
+      <View style={{justifyContent:'center',alignItems: "center",borderWidth:2,borderRadius:10,borderColor:'#00603a'}} key={plant.number}>
       <TouchableOpacity onPress={() => this.props.navigation.navigate('PlantProgress',{plant:plant})}>
-      <Image source={{uri:plant.imageUrl}} style={{width: 400, height: 450}}/></TouchableOpacity>
-      <Text>{plant.name}</Text>
+      <Image source={{uri:plant.imageUrl}} borderRadius={75} style={{width: 175, height: 150,margin:10}}/></TouchableOpacity>
+      <Text style={styles.text}>{plant.name}</Text>
       </View>
       ))}
     </View>
@@ -51,7 +51,7 @@ render() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#deede7',
    
     justifyContent: 'center',
 
@@ -63,9 +63,11 @@ const styles = StyleSheet.create({
     borderWidth: 1
    },
    text:{
-    fontSize:50,
+    fontSize:20,
     textAlign:'center',
-    paddingBottom:60,
+    margin:15,
+    fontWeight:'bold',
+    color:'#7ead9b'
    },
   button: {
     padding:20,

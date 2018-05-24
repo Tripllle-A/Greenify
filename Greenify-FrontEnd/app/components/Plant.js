@@ -11,7 +11,7 @@ export default class PlantList extends React.Component {
 
  fork = () => {
 
-   
+      console.log("aaaaaaaaaaaaaaa",DB_URL)
       fetch(DB_URL + "/forkOne",{
           method: 'POST',
           headers: {
@@ -28,26 +28,19 @@ export default class PlantList extends React.Component {
         }
       })
   }
-//   .then(function(data) {
-//     console.log(data)
-//     this.setState({
-//       plants:data
-//     })
-//   })
-//   }
 
 render() {
  const plant = this.props.navigation.getParam('plant');
   return (
     <View style={styles.container}>
-      <Text> {plant.name}</Text>
-      <Image source={{uri:plant.imageUrl}} style={{width: 400, height: 450}}/>
+     <Text style={styles.text}> {plant.name}</Text>
+      <Image source={{uri:plant.imageUrl}} style={{width: 175, height: 200,margin:25}} borderRadius={10} />
       <TouchableOpacity
         style={styles.button}
         onPress = {this.fork}
         >
         
-        <Text>Fork</Text>
+        <Text>Fork It</Text>
       </TouchableOpacity>
     </View>
     )
@@ -57,8 +50,8 @@ render() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
-   
+    backgroundColor: '#deede7',
+    alignItems: "center",
     justifyContent: 'center',
 
   },
@@ -69,13 +62,18 @@ const styles = StyleSheet.create({
     borderWidth: 1
    },
    text:{
-    fontSize:50,
+    fontSize:20,
     textAlign:'center',
-    paddingBottom:60,
+    margin:15,
+    fontWeight:'bold',
+    color:'#7ead9b'
    },
-  button: {
+   button: {
     padding:20,
     borderWidth:1,
-    backgroundColor:'green'
+    borderRadius:20,
+    marginRight:70,
+    marginLeft:70,
+    backgroundColor:'#7ead9b',
   }
 });
