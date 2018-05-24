@@ -1,12 +1,10 @@
 import React from 'react';
 
 import {ScrollView, StyleSheet, Text, View ,TouchableOpacity,TextInput,Image} from 'react-native';
-
+import { DB_URL } from 'react-native-dotenv'
 export default class PlantList extends React.Component {
     constructor(){
     super();
-   
-
   }
 
 
@@ -14,7 +12,7 @@ export default class PlantList extends React.Component {
  fork = () => {
 
    
-      fetch("http://192.168.1.109:3000/forkOne",{
+      fetch(DB_URL + "/forkOne",{
           method: 'POST',
           headers: {
               'Accept': 'application/json',

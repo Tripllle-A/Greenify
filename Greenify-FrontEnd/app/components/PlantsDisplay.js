@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {ScrollView, StyleSheet, Text, View ,TouchableOpacity,TextInput,Image} from 'react-native';
-
+import { DB_URL } from 'react-native-dotenv'
 export default class PlantList extends React.Component {
     constructor(){
     super();
@@ -15,7 +15,7 @@ export default class PlantList extends React.Component {
 
   componentDidMount = () => {
     console.log(process.env.DB_URL)
-   fetch('http://192.168.1.109:3000/plants')
+   fetch(DB_URL+ '/plants')
     .then((response) => response.json())
     .then((responseJson) => {
       // console.log(responseJson)

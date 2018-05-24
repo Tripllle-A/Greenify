@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {ScrollView, StyleSheet, Text, View ,TouchableOpacity,TextInput,Image} from 'react-native';
-
+import { DB_URL } from 'react-native-dotenv'
 export default class MyPlants extends React.Component {
     constructor(){
     super();
@@ -14,7 +14,7 @@ export default class MyPlants extends React.Component {
 
 
 componentDidMount = () => {
-   fetch("http://192.168.1.109:3000/viewProfile")
+   fetch(DB_URL + "/viewProfile")
     .then((response) => response.json())
     .then((responseJson) => {
        console.log(22,responseJson)

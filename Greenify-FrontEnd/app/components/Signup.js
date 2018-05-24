@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { StyleSheet, Text, View ,TouchableOpacity,TextInput,Image,KeyboardAvoidingView} from 'react-native';
-
+import { DB_URL } from 'react-native-dotenv'
 export default class App extends React.Component {
     constructor(){
     super();
@@ -64,7 +64,7 @@ export default class App extends React.Component {
   signup = () => {
 
     if(this.state.username.length && this.state.password.length && this.state.phonenumber.length  !==0){
-      fetch("http://192.168.1.109:3000/users",{
+      fetch(DB_URL+"/users",{
           method: 'POST',
           headers: {
               'Accept': 'application/json',
