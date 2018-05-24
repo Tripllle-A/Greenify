@@ -21,49 +21,41 @@ export default class Login extends React.Component {
       this.props.navigation.navigate('Home');
     }
   }
+   goToSignUp = () => {
+    this.props.navigation.navigate('Signup');
+  }
 
   render() {
     return (
-      <KeyboardAvoidingView behavior='padding' style={styles.wrapper} enabled>
+      <KeyboardAvoidingView behavior='padding' style={styles.container} enabled>
         <View style={styles.container}>
-          <Text style={styles.header}>
-          - Login -
-          </Text>
+          <Image source={{uri:'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-914819026-1518897132.jpg?resize=768:*'}} style={{width:400,height:300}} borderRadius={80}/>
+          <Text style={{textAlign:'center'}}>Username</Text>
           <TextInput
-            style={styles.textInput} placeholder='username'
+            style={styles.input} placeholder='username'
             onChangeText={(username) => this.setState({username})}
             underlineColorAndroid='transparent'
           />
+          <Text style={{textAlign:'center'}}>Password</Text>
           <TextInput
-            style={styles.textInput} placeholder='password'
+            style={styles.input} placeholder='password'
             onChangeText={(password) => this.setState({password})}
             underlineColorAndroid='transparent'
             secureTextEntry={true}
           />
           <TouchableOpacity
-            style={styles.btn}
+            style={styles.button}
             onPress={this.login}>
-            <Text>Login</Text>
+            <Text style={{textAlign:'center'}}>Login</Text>
           </TouchableOpacity>
-
-          <TouchableOpacity
-            style={styles.btn2}
-            onPress={() => this.props.navigation.navigate('Signup')}>
-            <Text>SignUp</Text>
-          </TouchableOpacity>
-          <TextInput
-            style={styles.textInput} placeholder='password'
-            onChangeText={(password) => this.setState({password})}
-            underlineColorAndroid='transparent'
-            secureTextEntry={true}
-          />
+           <Text style={{textAlign:'center',marginBottom:10,marginTop:10}}>Dont have account?        .<Text style={{color:'blue'}} onPress={this.goToSignUp}>Sign Up</Text></Text>
         </View>
       </KeyboardAvoidingView>
       );
   }
   login = () => {
     if(this.state.username.length && this.state.password.length !==0){
-
+      console.log("aaaaaaaaaaaaaaa",DB_URL)
       fetch(DB_URL + "/login",{
         method: 'POST',
         headers: {
@@ -74,17 +66,7 @@ export default class Login extends React.Component {
           username: this.state.username,
           password: this.state.password,
         })
-      })
-      // .then((response) => response.json())
-      // .then((res) => {
-      //   if (res.success === true){
-      //     AsyncStorage.setItem('user', res.user);
-      //     this.props.navigation.navigate('Home');
-      //   } else {
-      //     alert(res.message)
-      //   }
-      // })
-      .then((responseData) => {
+      }).then((responseData) => {
         console.log(responseData)
         if(responseData.status === 200){
           alert('Signedin Successfully-1')
@@ -98,42 +80,34 @@ export default class Login extends React.Component {
       alert('please fill all the information')
     }
   }
+ 
 }
 
 const styles = StyleSheet.create({
-  wrapper: {
-    flex: 1,
-  },
   container: {
     flex: 1,
-    alignItems: 'center',
+    backgroundColor: 'white',
     justifyContent: 'center',
-    backgroundColor: '#2896d3',
-    paddingLeft: 40,
-    paddingRight :40,
   },
-  header: {
-    fontSize: 24,
-    marginBottom: 60,
-    color: '#fff',
-    fontWeight: 'bold',
-  },
-  textInput: {
-    alignSelf: 'stretch',
-    padding: 16,
-    marginBottom: 20,
-    backgroundColor: '#fff',
-  },
-  btn: {
-    alignSelf: 'stretch',
-    backgroundColor: '#01c853',
-    padding: 20,
-    alignItems: 'center',
-  },
-  btn2: {
-  alignSelf: 'stretch',
-  backgroundColor: 'green',
-  padding: 20,
-  alignItems: 'center',
-},
-})
+   input: {
+    borderRadius:10,
+    margin: 15,
+    height: 40,
+    borderColor: '#cbeaa8',
+    borderWidth: 1,
+    
+   },
+   text:{
+    fontSize:50,
+    textAlign:'center',
+    paddingBottom:60,
+   },
+  button: {
+    padding:20,
+    borderWidth:1,
+    borderRadius:20,
+    marginRight:90,
+    marginLeft:90,
+    backgroundColor:'#0bba22',
+  }
+});
