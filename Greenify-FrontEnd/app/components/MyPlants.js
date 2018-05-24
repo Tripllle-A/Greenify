@@ -14,6 +14,7 @@ export default class MyPlants extends React.Component {
 
 
 componentDidMount = () => {
+  
    fetch(DB_URL + "/viewProfile")
     .then((response) => response.json())
     .then((responseJson) => {
