@@ -45,11 +45,11 @@ app.post("/login", function(req,res){
 });
 
 
-app.get('/logout', function(req, res) {
+app.get("/logout", function(req, res) {
   req.session.destroy(function() {
-    res.send('Loggedout');
+    res.send("Loggedout");
   });
-})
+});
 
 
 app.post("/users", function(req,res){
@@ -110,9 +110,9 @@ app.post("/forkOne", function (req, res){
         } else {
           if(user.plants.indexOf(plant._id) === -1){
           user.plants.push(plant._id);
-          console.log(1111222222233333,user.plants)
+          console.log(1111222222233333,user.plants);
           user.save();
-          res.status(200).send()
+          res.status(200).send();
           }
         }
       });

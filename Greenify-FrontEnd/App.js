@@ -1,16 +1,16 @@
-import React from 'react';
+import React from "react";
 
-import { StyleSheet, Text, View } from 'react-native';
-import { createStackNavigator } from 'react-navigation';
+import { StyleSheet, Text, View } from "react-native";
+import { createStackNavigator } from "react-navigation";
 
-import Intro from './app/components/Intro';
-import Login from './app/components/Login';
-import Signup from './app/components/Signup';
-import Profile from './app/components/Profile';
-import PlantsDisplay from './app/components/PlantsDisplay';
-import Plant from './app/components/Plant';
-import MyPlants from './app/components/MyPlants';
-import PlantProgress from './app/components/PlantProgress';
+import Intro from "./app/components/Intro";
+import Login from "./app/components/Login";
+import Signup from "./app/components/Signup";
+import Profile from "./app/components/Profile";
+import PlantsDisplay from "./app/components/PlantsDisplay";
+import Plant from "./app/components/Plant";
+import MyPlants from "./app/components/MyPlants";
+import PlantProgress from "./app/components/PlantProgress";
 
 //testing
 const Application = createStackNavigator({
@@ -23,7 +23,7 @@ const Application = createStackNavigator({
   MyPlants: MyPlants,
   PlantProgress: PlantProgress
   },{
-    initialRouteName: 'Home',
+    initialRouteName: "Home",
   }
 );
 
