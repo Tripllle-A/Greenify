@@ -9,7 +9,7 @@ db.once("open", function () {
 });
 let plantSchema = mongoose.Schema({
 	number: {type: Number, index: {unique: true} },
-	name: {type: String, index: {unique: true}},
+	name: {type: String, unique: true},
 	description: String,
 	imageUrl: String,
   // users:[String]

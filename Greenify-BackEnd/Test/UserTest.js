@@ -2,7 +2,7 @@ var expect = require("chai").expect;
 var mongoose = require("mongoose");
 var user = require("../db/index");
 var server = require("../server.js");
-
+const should = require('should');
 var supertest = require("supertest");
 
 var request = supertest.agent(server);
@@ -45,4 +45,8 @@ describe("User Model", function () {
       expect(user.User.schema.paths.phonenumber.options.type.name).to.equal("Number");
   });
 
+  it("should have a `plants` property", function () {
+    expect(user.User.schema.paths.plants).to.exist;
+  });
+  
 });
