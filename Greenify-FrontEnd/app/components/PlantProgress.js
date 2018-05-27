@@ -22,7 +22,7 @@ export default class PlantProgress extends React.Component {
           })
       }).then((data) => {
         alert('Deleted Successfully')
-         this.props.navigation.navigate('MyPlants')
+         this.props.navigation.navigate('Profile')
       })
     } 
 

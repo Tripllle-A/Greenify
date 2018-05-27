@@ -57,8 +57,6 @@ const styles = StyleSheet.create({
   Page: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: 'white',
-    //When finish delet this
-    marginBottom:25,
+    backgroundColor: 'white'
   },
 });
