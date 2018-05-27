@@ -15,7 +15,7 @@ import Drawer from "./app/components/Drawer"
 
 //testing
 const Application = createStackNavigator({
-  // Drawer: Drawer,
+  Drawer: Drawer,
   Home: Drawer,
   Login: Login,
   Signup: Signup,
