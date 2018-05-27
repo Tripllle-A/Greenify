@@ -7,11 +7,9 @@ export default class PlantList extends React.Component {
     super();
   }
 
-
-
  fork = () => {
 
-      console.log("aaaaaaaaaaaaaaa",DB_URL)
+
       fetch(DB_URL + "/forkOne",{
           method: 'POST',
           headers: {
