@@ -10,7 +10,11 @@ import Profile from './Profile'
 
 
 const MyDrawer=createDrawerNavigator(
-  { MyPlants:{
+  {
+    Intro:{
+      screen:Intro
+    },
+   MyPlants:{
       screen:MyPlants,
     },
     PlantsDisplay:{
