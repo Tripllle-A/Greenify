@@ -143,6 +143,28 @@ app.get("/plants/:number", function (req, res) {
   });
 });
 
+app.post('/deletePlant/:id',function(req, res){
+
+    var id = req.params.id
+    var arr = []
+  db.User.findOne({username:'ammar'}, function(err, data){
+
+    arr = data.plants;
+    for(var i = 0 ; i < arr.length ; i++){
+      if(arr[i].toString() === id){
+        data.plants.splice(i, 1)
+      }
+    }
+    db.User.findOneAndUpdate({username: 'ammar'}, 
+      
+      { plants: arr }, function(err, mod){
+        res.send(arr)
+      })
+    
+  })
+
+})
+
 // Launch the server on port 3000
 if(!module.parent) {
 var port = 3000;
