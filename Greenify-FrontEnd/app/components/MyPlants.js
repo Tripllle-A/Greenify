@@ -13,20 +13,26 @@ export default class MyPlants extends React.Component {
 
 
 
-componentDidMount = () => {
-  console.log("aaaaaaaaaaaaaaa",DB_URL)
-   fetch(DB_URL + "/viewProfile")
-    .then((response) => response.json())
-    .then((responseJson) => {
-       console.log(22,responseJson)
-      this.setState({
-        plants:responseJson.plants
-      });
-    })
-    .catch((error) => {
-      console.error(error);
-    }); 
-}
+ 
+  
+
+  componentDidMount = () => {
+ 
+    console.log("aaaaaaaaaaaaaaa",DB_URL)
+     fetch(DB_URL + "/viewProfile")
+      .then((response) => response.json())
+      .then((responseJson) => {
+         console.log(22,responseJson)
+        this.setState({
+          plants:responseJson.plants
+
+        })
+      })
+      .catch((error) => {
+        console.error(error);
+      }); 
+         
+  }
 
 
 logout = () => {
