@@ -11,10 +11,12 @@ import PlantsDisplay from "./app/components/PlantsDisplay";
 import Plant from "./app/components/Plant";
 import MyPlants from "./app/components/MyPlants";
 import PlantProgress from "./app/components/PlantProgress";
+import Drawer from "./app/components/Drawer"
 
 //testing
 const Application = createStackNavigator({
-  Home: Intro,
+  Drawer: Drawer,
+  Home: Drawer,
   Login: Login,
   Signup: Signup,
   Profile: Profile,

@@ -11,19 +11,26 @@ export default class Login extends React.Component {
     };
   }
 
-  componentDidMount(){
-    this._loadInitialState().done();
-  }
+  // componentDidMount(){
+  //   this._loadInitialState().done();
+  // }
 
-  _loadInitialState = async () => {
-    var value = await AsyncStorage.getItem('user');
-    if (value !== null){
-      this.props.navigation.navigate('Home');
-    }
-  }
-   goToSignUp = () => {
-    this.props.navigation.navigate('Signup');
-  }
+  // _loadInitialState = async () => {
+  //   var value = await AsyncStorage.getItem('user');
+  //   if (value !== null){
+  //     this.props.navigation.navigate('Home');
+  //   }
+  // }
+  //  goToSignUp = () => {
+  //   this.props.navigation.navigate('Signup');
+  // }
+  componentDidMount(){
+   fetch(DB_URL + "/logout")
+  .then((response) =>{
+    this.props.navigation.navigate('Login')
+  })
+}
+
 
   render() {
     return (

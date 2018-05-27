@@ -29,6 +29,13 @@ componentDidMount = () => {
 }
 
 
+logout = () => {
+  fetch(DB_URL + "/logout")
+  .then((response) =>{
+    this.props.navigation.navigate('Login')
+  })
+}
+
 render() {
   return (
     <View style={styles.container}>
@@ -43,6 +50,9 @@ render() {
       ))}
     </View>
     </ScrollView>
+    <TouchableOpacity style={styles.button} onPress={this.logout}>
+    <Text>Logout</Text>
+    </TouchableOpacity>
     </View>
     )
   }
