@@ -26,6 +26,10 @@ const Application = createStackNavigator({
   PlantProgress: PlantProgress
   },{
     initialRouteName: "Home",
+    headerMode: 'none',
+    navigationOptions: {
+      headerVisible: false,
+    }
   }
 );
 
