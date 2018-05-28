@@ -147,7 +147,7 @@ app.post("/deletePlant/:id",function(req, res){
 
     var id = req.params.id;
     var arr = [];
-  db.User.findOne({username:"ammar"}, function(err, data){
+  db.User.findOne({username:req.session.user.username}, function(err, data){
 
     arr = data.plants;
     for(var i = 0 ; i < arr.length ; i++){
@@ -155,7 +155,7 @@ app.post("/deletePlant/:id",function(req, res){
         data.plants.splice(i, 1);
       }
     }
-    db.User.findOneAndUpdate({username: "ammar"}, 
+    db.User.findOneAndUpdate({username: req.session.user.username}, 
       
       { plants: arr }, function(err, mod){
         res.send(arr);
