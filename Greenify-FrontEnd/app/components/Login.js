@@ -1,6 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View ,TouchableOpacity,TextInput,Image,KeyboardAvoidingView,AsyncStorage} from 'react-native';
-import { DB_URL } from 'react-native-dotenv'
+import { DB_URL } from 'react-native-dotenv';
+import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
+import { Sae } from 'react-native-textinput-effects';
+
 export default class Login extends React.Component {
   constructor(props){
     super(props);
@@ -37,20 +40,36 @@ export default class Login extends React.Component {
       <KeyboardAvoidingView behavior='padding' style={styles.container} enabled>
         <View style={styles.container}>
           <Image source={{uri:'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-914819026-1518897132.jpg?resize=768:*'}} style={{width:400,height:300}} borderRadius={80}/>
-          <Text style={{textAlign:'center'}}>Username</Text>
-          <TextInput
-            style={styles.input} placeholder='username'
-            onChangeText={(username) => this.setState({username})}
-            underlineColorAndroid='transparent'
-          />
-          <Text style={{textAlign:'center'}}>Password</Text>
-          <TextInput
-            style={styles.input} placeholder='password'
-            onChangeText={(password) => this.setState({password})}
-            underlineColorAndroid='transparent'
-            secureTextEntry={true}
-            ref={input => { this.textInput = input }}
-          />
+           <Sae
+    label={'Username'}
+    labelStyle={{
+      fontFamily: 'notoserif',
+      color:'#cbeaa8',
+    }}
+    iconClass={FontAwesomeIcon}
+    iconName={'pencil'}
+    iconColor={'green'}
+    inputStyle={{ color: '#91627b' }}
+    onChangeText={(username) => this.setState({username})}
+    autoCapitalize={'none'}
+    autoCorrect={false}
+  />
+  <Sae
+    label={'Password'}
+    labelStyle={{
+      fontFamily: 'notoserif',
+      color:'#cbeaa8',
+    }}
+    iconClass={FontAwesomeIcon}
+    iconName={'pencil'}
+    iconColor={'green'}
+    inputStyle={{ color: '#91627b' }}
+    onChangeText={(password) => this.setState({password})}
+    autoCapitalize={'none'}
+    autoCorrect={false}
+    secureTextEntry={true}
+    ref={input => { this.textInput = input }}
+  />
           <TouchableOpacity
             style={styles.button}
             onPress={this.login}>
