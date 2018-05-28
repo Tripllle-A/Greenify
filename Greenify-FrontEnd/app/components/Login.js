@@ -87,6 +87,9 @@ export default class Login extends React.Component {
       alert('please fill all the information')
     }
   }
+   goToSignUp = () => {
+    this.props.navigation.navigate('Signup');
+  }
  
 }
 
