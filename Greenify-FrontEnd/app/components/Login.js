@@ -49,6 +49,7 @@ export default class Login extends React.Component {
             onChangeText={(password) => this.setState({password})}
             underlineColorAndroid='transparent'
             secureTextEntry={true}
+            ref={input => { this.textInput = input }}
           />
           <TouchableOpacity
             style={styles.button}
@@ -61,6 +62,8 @@ export default class Login extends React.Component {
       );
   }
   login = () => {
+   
+
     if(this.state.username.length && this.state.password.length !==0){
       console.log("aaaaaaaaaaaaaaa",DB_URL)
       fetch(DB_URL + "/login",{
@@ -79,8 +82,10 @@ export default class Login extends React.Component {
           alert('Signedin Successfully-1')
           //AsyncStorage.setItem('user', res.user);
           this.props.navigation.navigate('Profile');
+          //this.textInput.clear()
         }else{
           alert("wrong password")
+           this.textInput.clear()
         }
       })
     }else{
