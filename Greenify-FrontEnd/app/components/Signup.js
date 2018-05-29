@@ -70,8 +70,7 @@ export default class App extends React.Component {
     onChangeText={(phonenumber) => this.setState({phonenumber})}
     autoCapitalize={'none'}
     autoCorrect={false}
-    secureTextEntry={true}
-    value={this.state.password}
+    value={this.state.phonenumber}
   />
            <TouchableOpacity onPress={this.signup} style={styles.button}>
               <Text style={{textAlign:'center'}}>Sign up</Text>
