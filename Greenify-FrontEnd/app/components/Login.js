@@ -27,7 +27,7 @@ export default class Login extends React.Component {
        data: { type: 'delayed' }
      }
      var d= new Date();
-     var times = d.setHours(17,37, 0);
+     var times = d.setHours(17,50, 0);
      const schedulingOptions = {
        time: times
      }
@@ -54,7 +54,7 @@ export default class Login extends React.Component {
       color:'#cbeaa8',
     }}
     iconClass={FontAwesomeIcon}
-    iconName={'pencil'}
+    iconName={'pagelines'}
     iconColor={'green'}
     inputStyle={{ color: '#91627b' }}
     onChangeText={(username) => this.setState({username})}
@@ -68,7 +68,7 @@ export default class Login extends React.Component {
       color:'#cbeaa8',
     }}
     iconClass={FontAwesomeIcon}
-    iconName={'pencil'}
+    iconName={'pagelines'}
     iconColor={'green'}
     inputStyle={{ color: '#91627b' }}
     onChangeText={(password) => this.setState({password})}
