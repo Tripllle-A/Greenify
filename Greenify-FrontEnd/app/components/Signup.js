@@ -1,7 +1,9 @@
 import React from 'react';
 
 import { StyleSheet, Text, View ,TouchableOpacity,TextInput,Image,KeyboardAvoidingView} from 'react-native';
-import { DB_URL } from 'react-native-dotenv'
+import { DB_URL } from 'react-native-dotenv';
+import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
+import { Sae } from 'react-native-textinput-effects';
 export default class App extends React.Component {
     constructor(){
     super();
@@ -22,34 +24,55 @@ export default class App extends React.Component {
       <View style={styles.container}>
        <Image source={{uri:'https://i.pinimg.com/originals/e8/88/d4/e888d4feff8fd5ff63a965471a94b874.gif'}} style={styles.container} />
         <View style={{marginTop:10,marginBottom:10,marginRight:25,marginLeft:25}}>
-        <Text style={{textAlign:'center'}}>Username</Text>
-        <TextInput
-      ref= {(el) => { this.username = el; }}
-      onChangeText={(username) => this.setState({username})}
-      value={this.state.username} underlineColorAndroid = "transparent"
-                 placeholder = "username"
-                 autoCapitalize = "none"
-                 style={styles.input}
-      />
-      <Text style={{textAlign:'center'}}>Password</Text>
-      <TextInput
-      ref= {(el) => { this.password = el; }}
-      onChangeText={(password) => this.setState({password})}
-      value={this.state.password} underlineColorAndroid = "transparent"
-                 secureTextEntry = {true}
-                 placeholder = "Password"
-                 autoCapitalize = "none"
-                 style={styles.input}
-      />
-      <Text style={{textAlign:'center'}}>PhoneNumber</Text>
-      <TextInput
-      ref= {(el) => { this.phonenumber = el; }}
-      onChangeText={(phonenumber) => this.setState({phonenumber})}
-      value={this.state.phonenumber} underlineColorAndroid = "transparent"
-                 placeholder = "phonenumber"
-                 autoCapitalize = "none"
-                 style={styles.input}
-      />
+        <Sae
+    label={'Username'}
+    labelStyle={{
+      fontFamily: 'notoserif',
+      color:'#cbeaa8',
+    }}
+    iconClass={FontAwesomeIcon}
+    iconName={'pagelines'}
+    iconColor={'green'}
+    inputStyle={{ color: '#91627b' }}
+    onChangeText={(username) => this.setState({username})}
+    value={this.state.username}
+    autoCapitalize={'none'}
+    autoCorrect={false}
+    ref= {(el) => { this.username = el }}
+  />
+  <Sae
+    label={'Password'}
+    labelStyle={{
+      fontFamily: 'notoserif',
+      color:'#cbeaa8',
+    }}
+    iconClass={FontAwesomeIcon}
+    iconName={'pagelines'}
+    iconColor={'green'}
+    inputStyle={{ color: '#91627b' }}
+    onChangeText={(password) => this.setState({password})}
+    autoCapitalize={'none'}
+    autoCorrect={false}
+    secureTextEntry={true}
+    value={this.state.password}
+    ref= {(el) => { this.password = el; }}
+  />
+  <Sae
+    label={'PhoneNumber'}
+    labelStyle={{
+      fontFamily: 'notoserif',
+      color:'#cbeaa8',
+    }}
+    iconClass={FontAwesomeIcon}
+    iconName={'pagelines'}
+    iconColor={'green'}
+    inputStyle={{ color: '#91627b' }}
+    onChangeText={(phonenumber) => this.setState({phonenumber})}
+    autoCapitalize={'none'}
+    autoCorrect={false}
+    secureTextEntry={true}
+    value={this.state.password}
+  />
            <TouchableOpacity onPress={this.signup} style={styles.button}>
               <Text style={{textAlign:'center'}}>Sign up</Text>
            </TouchableOpacity>

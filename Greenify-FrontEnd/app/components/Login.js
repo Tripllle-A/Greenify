@@ -47,7 +47,7 @@ export default class Login extends React.Component {
       color:'#cbeaa8',
     }}
     iconClass={FontAwesomeIcon}
-    iconName={'pencil'}
+    iconName={'pagelines'}
     iconColor={'green'}
     inputStyle={{ color: '#91627b' }}
     onChangeText={(username) => this.setState({username})}
@@ -61,7 +61,7 @@ export default class Login extends React.Component {
       color:'#cbeaa8',
     }}
     iconClass={FontAwesomeIcon}
-    iconName={'pencil'}
+    iconName={'pagelines'}
     iconColor={'green'}
     inputStyle={{ color: '#91627b' }}
     onChangeText={(password) => this.setState({password})}
