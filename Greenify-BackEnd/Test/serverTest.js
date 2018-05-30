@@ -1,3 +1,6 @@
+//In this file we are checking the request that are in the server side 
+//that they are giving the right thing.
+//using mocha-chai software
 
 let mongoose = require("mongoose");
 let User = require("../db/index");

@@ -1,8 +1,6 @@
 import React from 'react';
 import { CheckBox, StyleSheet, Text, View ,TouchableOpacity,TextInput,Image,KeyboardAvoidingView,AsyncStorage} from 'react-native';
 import { DB_URL } from 'react-native-dotenv';
-import { Notifications, Permissions, Constants } from 'expo';
-import moment from 'moment';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import { Sae } from 'react-native-textinput-effects';
 
@@ -18,25 +16,9 @@ export default class Login extends React.Component {
     componentDidMount(){
      fetch(DB_URL + "/logout")
     .then((response) =>{
+      
       this.props.navigation.navigate('Login')
-      const localNotification = {
-       
-       title: 'النباتات',
-       sound:true,
-       body: 'اسقي النباتات بعرضك',
-       data: { type: 'delayed' }
-     }
-     var d= new Date();
-     var times = d.setHours(17,50, 0);
-     const schedulingOptions = {
-       time: times
-     }
-
-     console.log('Scheduling delayed notification:', { localNotification, schedulingOptions })
-
-     Notifications.scheduleLocalNotificationAsync(localNotification, schedulingOptions)
-       .then(id => console.info(`Delayed notification scheduled (${id}) at ${moment(schedulingOptions.time).format()}`))
-       .catch(err => console.error(err))
+      
     })
   }
 

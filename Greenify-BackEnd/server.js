@@ -12,6 +12,7 @@ var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+//To use the session
 app.use(session({
   secret: "shhh, it's aa secret",
   resave : false,
@@ -19,7 +20,9 @@ app.use(session({
   
 }));
 
-
+//This request for the login process it will recieve a post request from
+//the client-side 'front-end'. After it the password will be compared
+//the a session will be created
 app.post("/login", function(req,res){
 
   var username = req.body.username;
@@ -44,6 +47,8 @@ app.post("/login", function(req,res){
   });
 });
 
+//This request for logout process, it will recieve a get request 
+//from the client-side then the session will be destroyed  
 
 app.get("/logout", function(req, res) {
   req.session.destroy(function() {

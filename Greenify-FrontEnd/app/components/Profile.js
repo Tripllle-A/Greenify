@@ -1,5 +1,6 @@
 import React from "react";
-
+import { Notifications, Permissions, Constants } from 'expo';
+import moment from 'moment';
 import { StyleSheet, Text, View ,TouchableOpacity,ImageBackground} from "react-native";
 
 export default class ProfileIntro extends React.Component {
@@ -7,6 +8,29 @@ export default class ProfileIntro extends React.Component {
     super();
     //all the data save before sent in state
   }
+
+
+    componentDidMount = () => {
+      const localNotification = {
+       
+       title: 'النباتات',
+       sound:true,
+       body: 'اسقي النباتات بعرضك',
+       data: { type: 'delayed' }
+     }
+     var d= new Date();
+     var times = d.setHours(21,47, 0);
+     const schedulingOptions = {
+       time: times
+     }
+
+     console.log('Scheduling delayed notification:', { localNotification, schedulingOptions })
+
+     Notifications.scheduleLocalNotificationAsync(localNotification, schedulingOptions)
+       .then(id => console.info(`Delayed notification scheduled (${id}) at ${moment(schedulingOptions.time).format()}`))
+       .catch(err => console.error(err))
+    }
+
 
   render() {
     return (

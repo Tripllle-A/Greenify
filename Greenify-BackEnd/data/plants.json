@@ -1,3 +1,6 @@
+/*these data are for the plants that will be provided in the database after running, 
+and will be appeared for the user once he registered. */
+
 [{
   "number": 1,
   "name": "Indoor trees",
