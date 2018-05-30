@@ -1,3 +1,6 @@
+//This component for viewing the profile page and here after login the Notification will
+//be started to be arrived for the user in specific time using expo scheduleNotification
+
 import React from "react";
 import { Notifications, Permissions, Constants } from 'expo';
 import moment from 'moment';

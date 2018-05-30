@@ -1,5 +1,9 @@
-import React from 'react';
+//This component for view the user's plant, it will make a get request for the back-end side
+//then after success it will put the plants in the plants array that is the state.After it
+//they will be rendered.
 
+
+import React from 'react';
 import {ScrollView, StyleSheet, Text, View ,TouchableOpacity,TextInput,Image} from 'react-native';
 import { DB_URL } from 'react-native-dotenv'
 export default class MyPlants extends React.Component {
@@ -10,10 +14,6 @@ export default class MyPlants extends React.Component {
       plants: []
     };
   }
-
-
-
- 
   
 
   componentDidMount = () => {

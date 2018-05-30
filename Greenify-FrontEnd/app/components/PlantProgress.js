@@ -1,5 +1,9 @@
-import React from 'react';
+//This component for viewing the plant progress, it will render the plant's 
+//description and image and name,then 
+//you can delete the plant by delete button, it will send a post request 
+//for the back-end side, after success it will be deleted form the user plants array.
 
+import React from 'react';
 import {ScrollView, StyleSheet, Text, View ,TouchableOpacity,TextInput,Image} from 'react-native';
 import { DB_URL } from 'react-native-dotenv';
 export default class PlantProgress extends React.Component {

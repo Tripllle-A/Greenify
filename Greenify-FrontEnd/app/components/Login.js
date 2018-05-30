@@ -1,3 +1,6 @@
+//This component is for the login process, here a post request will be sent for the back-end
+//side with the username and password then it will go to profile directly after success
+
 import React from 'react';
 import { CheckBox, StyleSheet, Text, View ,TouchableOpacity,TextInput,Image,KeyboardAvoidingView,AsyncStorage} from 'react-native';
 import { DB_URL } from 'react-native-dotenv';

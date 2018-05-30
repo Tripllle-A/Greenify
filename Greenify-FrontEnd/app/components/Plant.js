@@ -1,5 +1,8 @@
-import React from 'react';
+//This component contain the plant that the user joined it, it will make a post request 
+//for the back-end after the user click on the fork button,and after success it will be 
+//forked and saved in the user plants
 
+import React from 'react';
 import {ScrollView, StyleSheet, Text, View ,TouchableOpacity,TextInput,Image} from 'react-native';
 import { DB_URL } from 'react-native-dotenv'
 export default class PlantList extends React.Component {
