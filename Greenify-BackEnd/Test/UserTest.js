@@ -1,3 +1,7 @@
+//Here we are using test case using mocha-chai software
+//in this file we are making a test for the user schema checking 
+//the properties to make sure every thing is running in the right way
+
 var expect = require("chai").expect;
 var mongoose = require("mongoose");
 var user = require("../db/index");

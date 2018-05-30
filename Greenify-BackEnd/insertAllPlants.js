@@ -1,3 +1,6 @@
+//This file for insert the plants in the database after running the "insertAllPlants" function 
+//in the terminal using the functionName.js
+
 var db = require("./db/index.js");
 var data = require("./data/plants.json");
 

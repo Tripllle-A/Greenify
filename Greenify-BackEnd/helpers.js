@@ -1,3 +1,8 @@
+//For this file we are using it as a helper for four processes two of them
+//for the session 'login/logout'
+//and the others one for comparing the password during login process and the last one for 
+//hashing the password in the signup process
+
 var bcrypt = require("bcrypt");
 const db = require("./db/index.js");
 
