@@ -1,5 +1,7 @@
-import React from "react";
+//This component is the main component it will controll all the subcomponents to be rendered 
+//for the user using react-navigation.
 
+import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { createStackNavigator } from "react-navigation";
 

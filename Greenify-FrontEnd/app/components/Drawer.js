@@ -1,3 +1,7 @@
+//This Component is to render a drawer list in the app that 
+//contain alot of components that are useful for the user
+//it use navigation between the components
+
 import React from 'react'
 import { View, StyleSheet, Text} from 'react-native'
 import { createDrawerNavigator } from 'react-navigation'

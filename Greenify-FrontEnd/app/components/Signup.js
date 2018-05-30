@@ -1,5 +1,8 @@
-import React from 'react';
+//This component for signup process, it will send a post request for the back-end
+//side, then after success it will navigate the user for the login page.
 
+
+import React from 'react';
 import { StyleSheet, Text, View ,TouchableOpacity,TextInput,Image,KeyboardAvoidingView} from 'react-native';
 import { DB_URL } from 'react-native-dotenv';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
