@@ -50,7 +50,7 @@ export default class ProfileIntro extends React.Component {
           height: "100%",
           justifyContent: "center",
         }}
-        source={{ uri: "http://www.limerickgardentrail.com/wp-content/uploads/plants-for-home-dont-have-much-space-to-grow-your-plants-at-home-meshpedia.jpg" }}
+        source={{ uri: "https://s33.postimg.cc/dbh3ij85b/profilepage.jpg" }}
       >
       </ImageBackground>
       </TouchableOpacity>
@@ -67,7 +67,7 @@ export default class ProfileIntro extends React.Component {
           height: "100%",
           justifyContent: "center",
         }}
-        source={{ uri: "https://simplytreesfl.com/wp-content/uploads/2018/01/simply-trees-llc-hand-photo-webop.png" }}
+        source={{ uri: "https://s33.postimg.cc/55z1kf9mn/viewprofile2.jpg" }}
       >
       </ImageBackground>
       </TouchableOpacity>
