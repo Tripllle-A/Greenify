@@ -5,7 +5,7 @@
 import React from 'react'
 import { View, StyleSheet, Text} from 'react-native'
 import { createDrawerNavigator } from 'react-navigation'
-
+import InfoPage from './InfoPage'
 import Intro from './Intro'
 import Login from './Login'
 import MyPlants from './MyPlants'
@@ -29,7 +29,7 @@ const MyDrawer=createDrawerNavigator(
     },
       
     LogOut:{
-      screen:Login,
+      screen:InfoPage,
     },
   },
   {                                 

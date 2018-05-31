@@ -104,6 +104,18 @@ app.get("/myplants", function (req, res) {
     });
 });
 
+app.get("/infoPage", function (req, res) {
+    var actual = req.session.user.username;
+    db.User.findOne({username:actual},function(err,user){
+      var obj = {
+        username : user.username,
+        phonenumber : user.phonenumber
+      }
+      res.send(obj)
+      
+    });
+});
+
 
 app.post("/forkOne", function (req, res){
     var plant = req.body.name;
