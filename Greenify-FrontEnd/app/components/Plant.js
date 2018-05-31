@@ -36,6 +36,7 @@ render() {
     <View style={styles.container}>
      <Text style={styles.text}> {plant.name}</Text>
       <Image source={{uri:plant.imageUrl}} style={{width: 175, height: 200,margin:25}} borderRadius={10} />
+      <View style={styles.border}><Text style={{margin:20,color:'#7ead9b',fontSize:14}}>{plant.description}</Text></View>
       <TouchableOpacity
         style={styles.button}
         onPress = {this.fork}
@@ -76,5 +77,11 @@ const styles = StyleSheet.create({
     marginRight:70,
     marginLeft:70,
     backgroundColor:'#7ead9b',
+  },
+  border: {
+    margin:15,
+    borderWidth:1,
+    borderRadius:15,
+     borderColor: '#7ead9b'
   }
 });
