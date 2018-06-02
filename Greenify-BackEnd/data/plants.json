@@ -1,6 +1,3 @@
-/*these data are for the plants that will be provided in the database after running, 
-and will be appeared for the user once he registered. */
-
 [{
   "number": 1,
   "name": "AFRICAN VIOLET",
@@ -78,4 +75,26 @@ and will be appeared for the user once he registered. */
   "watering": "Keeping the soil fairly moist (to touch) within summer is advisable. Water sparingly at winter time and allow the soil to become quite dry, for about two months (this may encourage an early bloom).",
   "fertilizer": "A good organic soil that drains well is ideal to use.",
   "humidity": "If the temperature is correct there will be no need for concern about the humidity. Sponging the leaves gently will help. Stuffy rooms with central heating should be avoided."
-  }]
+  },{
+ "number": 8,
+ "name": "LOLLIPOP",
+ "imageUrl": "https://www.houseplantsexpert.com/image-files/blossoming-lollipop-plant.jpg",
+ "description": "While the P. lutea is not as popular as many other indoor plants, it really is a delightful plant to grow, with a long flowering season from spring until fall.Grown outdoors they can reach up to about 4 feet in height, and a few feet wide, which is why growers indoors really need to keep the plant pruned.",
+ "origin": "Central and South America.",
+ "growth": "Height 1 - 2ft indoors, outdoors 4ft. Spread 2 - 3ft.",
+ "light": "Any area indoors that has plenty of daylight, but not direct sunlight.",
+ "watering": "Keep the soil damp and water frequently during summer. Water sparingly winter time.",
+ "fertilizer": "A decent fast draining potting soil mix, will suffice.",
+ "humidity": "The golden shrimp enjoys misting (summertime)."
+ },{
+ "number": 9,
+ "name": "MOTH ORCHID",
+ "imageUrl": "https://www.houseplantsexpert.com/image-files/moth_orchid_white.jpg",
+ "description": "If your looking for a flowering plant that produces flowers to match a rooms interior color and ambiance - the moth orchid has just about every option for all interior styles. There is over 50 species and hundreds of hybrids available today, which includes mini phals.The stalks stand tall, producing a number of flowers along the stalk and the large green oval shaped leaves sit close to the bottom of the stems and top roots. An interesting foliage feature is the curled medusa hair looking roots that sit near to the top of the medium. These roots are on the look out for moisture and nutrients to care for itself as they would in their natural habitat, being an epiphyte plant.",
+ "origin": "Southeast Asia, Taiwan, Australia and elsewhere.",
+ "growth": "Height 3ft.",
+ "light": "Providing enough light can be a problem for some growers because the moth orchid prefers bright light conditions for more than 10 hours a day. An east or west facing window is best suited - away from direct sun, but bright. During the winter you may have to supplement the plant with artificial lighting.",
+ "watering": "Once the orchid soil becomes dry to the touch, water thoroughly. Avoid allowing water to keep the soil soaked; you want it to drain away easily. Avoid watering the middle of the plants foliage (crown) because the water sitting here for a period of time may cause rot. Do not over-water!",
+ "fertilizer": "Feed from spring until fall with a diluted orchid liquid fertilizer, once every 1 - 2 weeks.",
+ "humidity": "  Avoid placing your plant in a room with dry air from artificial heating without supplementing humidity levels from a humidity tray (or other means). Orchids in their natural habitat thrive in high humidity conditions. Mist the leaves."
+ }]
