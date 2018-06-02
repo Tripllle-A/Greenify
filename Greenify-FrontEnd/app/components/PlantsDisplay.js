@@ -110,7 +110,7 @@ export default class MyProject extends Component {
         <View>
             <Text style={styles.text}>{rowData.name}</Text>
             <Text style={styles.texto}>Origin: {rowData.origin}</Text>
-            <Text style={styles.texto}>Max Growth: {rowData.growth}</Text>
+            <Text style={styles.texto}>Max Growth: {"\n"}{rowData.growth}</Text>
           </View>
         </View>
         )}
