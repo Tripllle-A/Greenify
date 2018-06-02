@@ -9,21 +9,21 @@ export default class Intro extends React.Component {
     this.state={
          data:[
           {
-          title:"Hello World",
-          text:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard",
-          image: {uri:"https://cdn-blog.credihealth.com/wp-content/uploads/2017/11/Indoor-Air-Purifying-Plants-India-660x330.jpg"}},
+          title:"GreenifyApp",
+          text:"",
+          image: {uri:"https://s22.postimg.cc/aoeyd1x6p/9de350d9-46a0-4e29-8751-1a6a842fbe42.png"}},
           {
-          title:"Lorem Ipsum",
-          text:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard",
+          title:"What is GreenifyApp",
+          text:"Greenify is a mobile application created to encourage people to make nice gardens in their houses, a wonderful list of plants will be exist with description to how take care with them.",
           image: {uri:"https://opimedia.azureedge.net/-/media/images/men/editorial/articles/magazine-articles/2018/04-01/top-plants-for-companion-planting/companion-1-jpg.jpg"}},
           {
-          title:"Lorem Ipsum",
-          text:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard",
+          title:"Why GreenifyApp",
+          text:"GreenifyApp helps you and gives you instruction how to let your plants grow and how to take care with them,how to plant your plants and more.",
           image: {uri:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS25qBQfw-dudK4A1B_VuOymWhbTabSbVNTJp1yvJFDFE393qBMIQ"}},
           {
-          title:"Lorem Ipsum",
-          text:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard",
-          image: {uri:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOTGJex1uCNQGNdAgaL1SGQx4XXHhFo2FXdo3midbjGB7W1t8O"}},
+          title:"Our feature",
+          text:"In GreenifyApp you can get a notification where ever you are to reminde you to water your plants.",
+          image: {uri:"https://media.istockphoto.com/photos/young-plants-picture-id501061554?k=6&m=501061554&s=612x612&w=0&h=5lFP3jXdahDsZNXX95sG5y5qUluP8DgwIJ5py1EdFJg="}},
 
       ]
 
@@ -45,7 +45,7 @@ export default class Intro extends React.Component {
         backgroundColor="red"
         loop={true}
         autoplay={true}
-        autoplayTimeout={3}/>
+        autoplayTimeout={4}/>
         </View>
 
         <View style={{ justifyContent: "center", alignItems: "center", flexDirection: "row", flex: 1}}>
