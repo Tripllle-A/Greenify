@@ -15,6 +15,12 @@ let plantSchema = mongoose.Schema({
 	name: {type: String, unique: true},
 	description: String,
 	imageUrl: String,
+  origin: String,
+  growth: String,
+  light: String,
+  watering: String,
+  fertilizer: String,
+  humidity: String
 });
 
 //For the user schema has 4 properties one of them is unique 'username',

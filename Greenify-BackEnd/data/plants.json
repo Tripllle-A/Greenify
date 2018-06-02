@@ -1,34 +1,100 @@
-/*these data are for the plants that will be provided in the database after running, 
-and will be appeared for the user once he registered. */
-
 [{
   "number": 1,
-  "name": "Indoor trees",
-  "imageUrl": "https://www.houseplantsexpert.com/image-files/umbrella_plant.jpg",
-  "description":"Tree type plants are suited displayed in parts of the home where they tend to get noticed well, a kind of focal point or some prefer the bonsai types."
+  "name": "AFRICAN VIOLET",
+  "imageUrl": "https://www.houseplantsexpert.com/assets/images/av-blue-1.jpg",
+  "description": "Saintpaulia is a genus comprising of approximately 20 species and subspecies, and many varietes. There are a fair few types including standard, trailers, miniatures, and chimeras (a basic way to put them into a category). Various species includes different sizes, flower colors and foliage types.A grower needs to understand which type they have if they plan to propagate them - the procedure is different (for the Chimera). There are actually thousands of hybrids with various flower colors/forms and leaf types available.",
+  "origin": "Eastern Africa",
+  "growth": "Diameter (micro - 3in) - (large - 16in)",
+  "light": "The African violet thrives in bright light, although too much direct sunlight will cause leaf problems (edges turn yellow, patches, or develop holes). I have grown mine, at best - close to east facing windows, but many other people grow them close to the south facing side. Growers will use artificial lighting to encourage blooms during winter time, using fluorescent lighting tubes. However, many of us do not want to use lighting and have the expense when we are happy enough to see the spring and summer blooms.",
+  "watering": "A big mistake is to over water these or even water them with very cold water. Very cold water prevents growth, causes leaf spots and may cause a change in color. It's best to water them once the soil becomes slightly dry to the touch and water from the top or bottom. Any excess water at the bottom of a pot tray should be removed.",
+  "fertilizer": "Fertilize every couple of weeks with a balanced fertilizer that's urea-free. Or even better, a solution specifically for A.violets.",
+  "humidity": "These need high humidity and plenty of gentle misting (with luke warm water, not in direct sunlight and only the leaves) for healthy growth and to flower well. You can use a humidity tray to support the correct levels that needs to have small pebbles or a layer of gravel at the bottom with water added below the surface."
   },{
   "number": 2,
-  "name": "SUCCULENT",
-  "imageUrl": "https://www.houseplantsexpert.com/assets/images/mother_of_thousands.jpg",
-  "description":"The list of succulent plants that can be grown indoors successfully is nearly endless. There are many wonderful species."
+  "name": "BUSY LIZZIE",
+  "imageUrl": "https://www.houseplantsexpert.com/image-files/Impatiens-walleriana.jpg",
+  "description": " many lizzies which are sold in garden centers are hybrids that has enabled this species to become more compact in it's growth and display attractive flower varieties. These delightful flowering plants brighten up patios or conservatories and have become one of the most popular bedding and hanging basket plants.",
+  "origin": "East Africa",
+  "growth": "24in (60cm) in height",
+  "light": "Bright light is key to these blooming and during winter. Direct sun light is be to avoided during the summer.",
+  "watering": "Keep the soil moist at all times but not soaking wet. During the growing season you will notice they drink a lot.",
+  "fertilizer": "Impatiens walleriana's grow well when fed with a balanced liquid fertilizer during spring and summer. I would say feeding once every 4 weeks is about right.",
+  "humidity": " Most indoor humidly levels are fine for this plant."
   },{
   "number": 3,
-  "name": "Bulb",
-  "imageUrl": "https://www.houseplantsexpert.com/image-files/lilac-impatiens-walleriana-flowers.jpg",
-  "description":"Growing bulbous plants is easy when choosing the right species. How to care is important to learn and the differences between these and other root systems."
+  "name": "FLORIST CYCLAMEN",
+  "imageUrl": "https://www.houseplantsexpert.com/assets/images/cyclamen_persicum_variety.jpg",
+  "description": "Cyclaman is the common name used for this plant and the name of the genus the persicum variety belongs to. In it's natural habitat you'll find this plant growing within rocky areas, among many shrub vegetation areas and over 1000m above sea levels. It is a tender plant which does not like frost, however, they're grown outdoors (temperate climates) but struggle to survive in winter temperatures.The genus of cyclames which are tuber plants consists of over 20 species and many hybrids, but the persicum and hybrids of this species are the most popular grown indoors. There are also dwarf sizes cultivated (like they are not small enough as they are!), which only grow up to 6 inches tall.",
+  "origin": "Middle East, Greek Islands and elsewhere",
+  "growth": "12 inches tall",
+  "light": "When the cyclamen persicum is in flower provide a decent amount of light, without direct sunlight.",
+  "watering": "Water the plant once the soil becomes just about dry to the touch, thoroughly. A good method for watering is to place the plant pot in tepid water and allow the soil and plant to soak up as much as possible, then allow it time to drain before placing it on the plant tray. Immersing them in water avoids water getting inside the crown, which is harmful to them.",
+  "fertilizer": " A liquid fertilizer diluted can be used once every 2 weeks while the plant has flowers and foliage.",
+  "humidity": " Humidity levels are best if they're improved by placing the plant in a pebble humidity tray or using other methods of increasing levels."
   },{
   "number": 4,
-  "name": "Living Stones",
-  "imageUrl": "https://www.houseplantsexpert.com/assets/images/lithops_optica.jpg",
-  "description":"Living stones are a unique type of plant that resemble stones or pebbles to camouflage them, for protection."
+  "name": "DUMB CANE",
+  "imageUrl": "https://www.houseplantsexpert.com/assets/images/dieffenbachia_amoena.jpg",
+  "description": "Dieffenbachia amoena is a very popular house plant due to its easy going nature. Plants that receive too little light or too little water will simply not grow as quickly as plants that are given proper care.This native to the West Indies will flower in the right conditions, but these flowers are unimpressive. The beauty of the dumb cane plant comes from the unique pattern found on every leaf.",
+  "origin": "West Indies",
+  "growth": "Height 6ft.",
+  "light": "This plant prefers bright, indirect sun light for the optimal growth. It will accept lighting conditions up to full shade and continue stunted growth. Full sun will burn the leaves.",
+  "watering": "For the best results, keep the dumb cane plant's top inch of soil moist at all times. It will tolerate extended periods of watering neglect, but the leaves will begin to shrivel. Watering makes the leaves stiffen. Before moving the plant, allow the soil to dry out. This will give the leaves a more rubbery texture which will better survive the handling process.",
+  "fertilizer": "To encourage your plant to grow faster, you may introduce a full strength mixture of standard, balanced fertilizer once a month. Over-fertilization will cause the plant to start dropping leaves.",
+  "humidity": "Normal room humidity is fine."
   },{
   "number": 5,
-  "name": "CACTUS",
-  "imageUrl": "https://www.houseplantsexpert.com/image-files/Disocactus-flagelliformis.jpg",
-  "description":"If you have enough light and warmth you can grow cacti. Many interesting and peculiar features have enabled these to become plants for the hobbyist."
+  "name": "Elephant's Ear",
+  "imageUrl": "https://www.houseplantsexpert.com/image-files/alocasia_amazonica_leaves.jpg",
+  "description": "The elephant's ear is a hybrid that has become a fairly popular ornamental house plant, and is one of the easiest to find and buy from the Alocasia genus. Different shades of green and yellow appear through the leaves when sun light hits the leaves which is an attractive sight.This plant takes root from rhizomes that allows them to be easily propagated. Outdoors in a northern environment this species will not survive the winter, although it may if it's taken indoors before the end of summer.",
+  "origin": "Southeast Asia",
+  "growth": "Height 1 - 2 ft",
+  "light": "Bright light, but no direct sunlight and shaded for a good part of the day in the summer, if it's warm and humid enough.",
+  "watering": "Water a little but often - keeping the soil moist at all times. Water much less during winter.",
+  "fertilizer": "Feed with a diluted balanced fertilizer from spring every 2 weeks and stop at the end of August then start again at the beginning of spring.",
+  "humidity": "These plants like slightly higher humidity levels than many other plants. You may need to raise the humidity levels in a room artificially by placing the plant in a humidity tray with pebbles or use a humidifier."
   },{
   "number": 6,
-  "name": "Hanging Basket",
-  "imageUrl": "https://www.houseplantsexpert.com/assets/images/bostonferns_hanging.jpg",
-  "description":"Hanging basket house plants are fabulous displayed within certain areas of the home. Conservatories are the most suited place to grow these."
-  }]
+  "name": "FALSE SHAMROCK",
+  "imageUrl": "https://www.houseplantsexpert.com/image-files/false_shamrock_leaf.jpg",
+  "description": "The false shamrock native to Brazil has picked up it's common name from the Irish shamrock symbol which refers to a triangular three leaved plant or the clover. These are often sold and bought as gift pot plants, especially just before St Patrick's day.Two interesting aspects of this plant is it's photonastic response, which is it's reaction of opening up its leaves during the day and closing at night. And, the other is that it's known as an edible plant, although there seems to be a lot of discussion about the amount of oxalic acid having negative effects on humans, so I think would rather stick to vegetables to be safe.",
+  "origin": "Brazil",
+  "growth": "12in tall",
+  "light": "  A good shaded spot within the home from direct sunlight is ideal. Sat back from a window in a bright room is suitable, but if the room is more north facing, place much closer to the window.",
+  "watering": "One of the worst things you can do with bulbs is over-water, which rots the bulb. Allowing the soil to begin to dry at the top is a good measurement of when to water again. Remember to stop watering if the plant becomes dormant.",
+  "fertilizer": "A diluted liquid fertilizer is helpful to use during the growing period. Feed once every 1 or 2 weeks. No feeding is required during dormancy.",
+  "humidity": "Average room humidity is fine."
+  },{
+  "number": 7,
+  "name": "KAFFIR LILY",
+  "imageUrl": "https://www.houseplantsexpert.com/image-files/kaffir-lily-flowers.jpg",
+  "description": "The K.lily is fairly easy to grow (within a greenhouse, conservatory or house), if basic care instructions are followed (see below). They also enjoy a period of time outdoors at summertime, shaded. It can grow up to 18 inches in height and width once it's fully matured, although they are slow growers so expect two to five years, for full maturity. You can expect these to bloom early spring time, although some growers can get them to produce flowers at other times. They can also bloom sporadically at other times..earlier than spring or much later than spring. You will need some patience to see your first years bloom, which could be approximately 2 -3 years. The flowers last for a couple of days and then they should be removed (when they are deteriorating) to allow new growth and others to bloom. When they are in bloom, do avoid moving the plant.",
+  "origin": "South Africa",
+  "growth": "18 inches in height",
+  "light": "Bright light is best (it can also be fine with less) and avoid direct sunlight.",
+  "watering": "Keeping the soil fairly moist (to touch) within summer is advisable. Water sparingly at winter time and allow the soil to become quite dry, for about two months (this may encourage an early bloom).",
+  "fertilizer": "A good organic soil that drains well is ideal to use.",
+  "humidity": "If the temperature is correct there will be no need for concern about the humidity. Sponging the leaves gently will help. Stuffy rooms with central heating should be avoided."
+  },{
+ "number": 8,
+ "name": "LOLLIPOP",
+ "imageUrl": "https://www.houseplantsexpert.com/image-files/blossoming-lollipop-plant.jpg",
+ "description": "While the P. lutea is not as popular as many other indoor plants, it really is a delightful plant to grow, with a long flowering season from spring until fall.Grown outdoors they can reach up to about 4 feet in height, and a few feet wide, which is why growers indoors really need to keep the plant pruned.",
+ "origin": "Central and South America.",
+ "growth": "Height 1 - 2ft indoors, outdoors 4ft. Spread 2 - 3ft.",
+ "light": "Any area indoors that has plenty of daylight, but not direct sunlight.",
+ "watering": "Keep the soil damp and water frequently during summer. Water sparingly winter time.",
+ "fertilizer": "A decent fast draining potting soil mix, will suffice.",
+ "humidity": "The golden shrimp enjoys misting (summertime)."
+ },{
+ "number": 9,
+ "name": "MOTH ORCHID",
+ "imageUrl": "https://www.houseplantsexpert.com/image-files/moth_orchid_white.jpg",
+ "description": "If your looking for a flowering plant that produces flowers to match a rooms interior color and ambiance - the moth orchid has just about every option for all interior styles. There is over 50 species and hundreds of hybrids available today, which includes mini phals.The stalks stand tall, producing a number of flowers along the stalk and the large green oval shaped leaves sit close to the bottom of the stems and top roots. An interesting foliage feature is the curled medusa hair looking roots that sit near to the top of the medium. These roots are on the look out for moisture and nutrients to care for itself as they would in their natural habitat, being an epiphyte plant.",
+ "origin": "Southeast Asia, Taiwan, Australia and elsewhere.",
+ "growth": "Height 3ft.",
+ "light": "Providing enough light can be a problem for some growers because the moth orchid prefers bright light conditions for more than 10 hours a day. An east or west facing window is best suited - away from direct sun, but bright. During the winter you may have to supplement the plant with artificial lighting.",
+ "watering": "Once the orchid soil becomes dry to the touch, water thoroughly. Avoid allowing water to keep the soil soaked; you want it to drain away easily. Avoid watering the middle of the plants foliage (crown) because the water sitting here for a period of time may cause rot. Do not over-water!",
+ "fertilizer": "Feed from spring until fall with a diluted orchid liquid fertilizer, once every 1 - 2 weeks.",
+ "humidity": "  Avoid placing your plant in a room with dry air from artificial heating without supplementing humidity levels from a humidity tray (or other means). Orchids in their natural habitat thrive in high humidity conditions. Mist the leaves."
+ }]

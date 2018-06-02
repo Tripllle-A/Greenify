@@ -109,9 +109,8 @@ export default class MyProject extends Component {
         </View>
         <View>
             <Text style={styles.text}>{rowData.name}</Text>
-            <Text style={styles.texto}>Type: QWEQWE</Text>
-            <Text style={styles.texto}>Color: SDFGFHVB</Text>
-            <Text style={styles.texto}>Time: CVDFDSDS</Text>
+            <Text style={styles.texto}>Origin: {rowData.origin}</Text>
+            <Text style={styles.texto}>Max Growth: {rowData.growth}</Text>
           </View>
         </View>
         )}
