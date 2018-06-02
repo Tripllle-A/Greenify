@@ -36,10 +36,12 @@ render() {
   return (
     <View style={styles.container}>
       <Image source={{uri:plant.imageUrl}} style={{width: 175, height: 200,margin:25}} borderRadius={20}/>
-      
       <Text style={styles.text}>{plant.name}</Text>
       <View style={{borderWidth:1,borderRadius:5,margin:10}}>
-      <Text style={{margin:15,fontSize:16,textAlign:'center',fontFamily:'notoserif'}}> {plant.description}</Text>
+      <Text style={{margin:15,fontSize:16,textAlign:'center',fontFamily:'notoserif'}}>Lighting: {plant.light}</Text>
+      <Text style={{margin:15,fontSize:16,textAlign:'center',fontFamily:'notoserif'}}>Watering: {plant.watering}</Text>
+      <Text style={{margin:15,fontSize:16,textAlign:'center',fontFamily:'notoserif'}}>Fertilizer:  {plant.fertilizer}</Text>
+      <Text style={{margin:15,fontSize:16,textAlign:'center',fontFamily:'notoserif'}}>Air Humidity: {plant.humidity}</Text>
       </View>
        <TouchableOpacity onPress={this.delete}><Text style={styles.text}>delete</Text></TouchableOpacity>
     </View>
