@@ -48,12 +48,13 @@ render() {
    <ScrollView>
     <View style={styles.container}>
       <View style={{justifyContent:'center',alignItems: "center",marginTop:20}}>
-      <Text style={styles.text}>GoodBye -<Text style={styles.text}>{this.state.info.username}</Text>-</Text>
-      <Text style={styles.text}>Your Phonenumber :<Text style={styles.text}>{this.state.info.phonenumber}</Text></Text>
+      <Text style={styles.text}>Thank you for uisng GreeifyApp{"\n"}-<Text style={styles.text}>{this.state.info.username}</Text>-</Text>
+      <Text style={styles.text}>GoodBye</Text>
 
       </View>
 
-      <Image source={{uri:'http://ericablocker.com/wp-content/uploads/2018/01/leaf.jpg'}} style={{width:300,height:300,marginTop:40}} borderRadius={80}/>
+      <Image source={{uri:'https://s22.postimg.cc/aoeyd1x6p/9de350d9-46a0-4e29-8751-1a6a842fbe42.png'}} style={{width:300,height:300,marginTop:40}} borderRadius={80}/>
+      <Text style={styles.text}>At your service</Text>
     </View>
     </ScrollView>
     <TouchableOpacity style={styles.button} onPress={this.logout}>
