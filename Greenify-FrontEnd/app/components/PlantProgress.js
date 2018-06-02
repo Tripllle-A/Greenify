@@ -34,6 +34,7 @@ render() {
  const plant = this.props.navigation.getParam('plant');
 
   return (
+    <ScrollView>
     <View style={styles.container}>
       <Image source={{uri:plant.imageUrl}} style={{width: 175, height: 200,margin:25}} borderRadius={20}/>
       <Text style={styles.text}>{plant.name}</Text>
@@ -45,6 +46,7 @@ render() {
       </View>
        <TouchableOpacity onPress={this.delete}><Text style={styles.text}>delete</Text></TouchableOpacity>
     </View>
+    </ScrollView>
     )
   }
 }

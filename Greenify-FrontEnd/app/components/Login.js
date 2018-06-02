@@ -90,7 +90,6 @@ export default class Login extends React.Component {
       }).then((responseData) => {
         console.log(responseData)
         if(responseData.status === 200){
-          alert('Signedin Successfully-1')
           //AsyncStorage.setItem('user', res.user);
           this.props.navigation.navigate('Profile');
           //this.textInput.clear()
