@@ -152,6 +152,23 @@ const styles = StyleSheet.create({
    borderRadius: 7 ,
    backgroundColor : "#FFFFFF"
         
-   }
+   },
+   
+   text:{
+    fontSize:15,
+    marginLeft:60,
+    marginBottom:30,
+    marginTop:10
+   },
+    texto:{
+    marginLeft:50,
+    marginBottom:10
+   },
+  button: {
+    padding:20,
+    borderWidth:1,
+    backgroundColor:'green'
+  }
+
  
 });
