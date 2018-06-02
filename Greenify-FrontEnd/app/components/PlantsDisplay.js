@@ -1,85 +1,157 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-import {ScrollView, StyleSheet, Text, View ,TouchableOpacity,TextInput,Image} from 'react-native';
+import { Text, StyleSheet, View, ListView, TextInput, ActivityIndicator, Alert, Image, TouchableOpacity} from 'react-native';
+
 import { DB_URL } from 'react-native-dotenv'
-export default class PlantList extends React.Component {
-    constructor(){
-    super();
-   
-    this.state={
-      plants: []
-    };
+
+export default class MyProject extends Component {
+ 
+  constructor(props) {
+
+    super(props);
+
+    this.state = {
+
+      isLoading: true,
+      text: '',
+    
+    }
+
+    this.arrayholder = [] ;
+  }
+ 
+  componentDidMount() {
+ 
+    return fetch(DB_URL+ '/plants')
+      .then((response) => response.json())
+      .then((responseJson) => {
+        let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+        this.setState({
+          isLoading: false,
+          dataSource: ds.cloneWithRows(responseJson),
+        }, function() {
+
+          // In this block you can do something with new state.
+          this.arrayholder = responseJson ;
+
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+      
   }
 
+  GetListViewItem (plant_name) {
+    
+   Alert.alert(plant_name);
+  
+  }
+  
+   SearchFilterFunction(text){
+     
+     const newData = this.arrayholder.filter(function(item){
+         const itemData = item.name.toUpperCase()
+         const textData = text.toUpperCase()
+         return itemData.indexOf(textData) > -1
+     })
+     this.setState({
+         dataSource: this.state.dataSource.cloneWithRows(newData),
+         text: text
+     })
+ }
+ 
+  ListViewItemSeparator = () => {
+    return (
+      <View
+        style={{
+          height: .5,
+          width: "100%",
+          backgroundColor: "#000",
+        }}
+      />
+    );
+  }
+ 
+ 
+  render() {
+    if (this.state.isLoading) {
+      return (
+        <View style={{flex: 1, paddingTop: 20}}>
+          <ActivityIndicator />
+        </View>
+      );
+    }
+ 
+    return (
+ 
+      <View style={styles.MainContainer}>
 
-
-  componentDidMount = () => {
-    console.log("aaaaaaaaaaaaaaa",DB_URL)
-     fetch(DB_URL+ '/plants')
-    .then((response) => response.json())
-    .then((responseJson) => {
-      // console.log(responseJson)
-      this.setState({
-        plants:responseJson
-      });
-    })
-    .catch((error) => {
-      console.error(error);
-    }); 
-}
-
-render() {
-  return (
-  <View style={styles.container}>
-    <ScrollView>
-      <View style={styles.container}>
-        {this.state.plants.map((plant) => (
-        <View  key={plant.number} style={{ flexDirection: 'row', flex: 1,borderWidth:3,borderColor:'#97a884'}}>
+      <TextInput 
+       style={styles.TextInputStyleClass}
+       onChangeText={(text) => this.SearchFilterFunction(text)}
+       value={this.state.text}
+       underlineColorAndroid='transparent'
+       placeholder="Search Here"
+        />
+ 
+        <ListView
+ 
+          dataSource={this.state.dataSource}
+ 
+          renderSeparator= {this.ListViewItemSeparator}
+ 
+          renderRow={(rowData) => (<View  key={rowData.number} style={{ flexDirection: 'row', flex: 1,borderWidth:3,borderColor:'#97a884'}}>
           <View>
-            <TouchableOpacity onPress={() => this.props.navigation.navigate('Plant',{plant:plant})}>
-              <Image source={{uri:plant.imageUrl}} style={{width: 200, height: 200, borderRadius:35}}/>
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Plant',{plant:rowData})}>
+              <Image source={{uri:rowData.imageUrl}} style={{width: 200, height: 200, borderRadius:35}}/>
             </TouchableOpacity>
         </View>
         <View>
-            <Text style={styles.text}>{plant.name}</Text>
+            <Text style={styles.text}>{rowData.name}</Text>
             <Text style={styles.texto}>Type: QWEQWE</Text>
             <Text style={styles.texto}>Color: SDFGFHVB</Text>
             <Text style={styles.texto}>Time: CVDFDSDS</Text>
           </View>
         </View>
-          ))}
+        )}
+
+          enableEmptySections={true}
+
+          style={{marginTop: 10}}
+ 
+        />
+ 
       </View>
-    </ScrollView>
-  </View>
-    )
+    );
   }
 }
-
+ 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#cbeaa8',
+ 
+ MainContainer :{
 
+  justifyContent: 'center',
+  flex:1,
+  margin: 7,
+  backgroundColor: '#cbeaa8',
+ 
   },
-   input: {
-    margin: 15,
-    height: 40,
-    borderColor: '#7a42f4',
-    borderWidth: 1
-   },
-   text:{
-    fontSize:15,
-    marginLeft:60,
-    marginBottom:30,
-    marginTop:10
-   },
-    texto:{
-    marginLeft:50,
-    marginBottom:10
-   },
-  button: {
-    padding:20,
-    borderWidth:1,
-    backgroundColor:'green'
-  }
+
+ rowViewContainer: {
+   fontSize: 17,
+   padding: 10
+  },
+
+  TextInputStyleClass:{
+        
+   textAlign: 'center',
+   height: 40,
+   borderWidth: 1,
+   borderColor: '#009688',
+   borderRadius: 7 ,
+   backgroundColor : "#FFFFFF"
+        
+   }
+ 
 });
